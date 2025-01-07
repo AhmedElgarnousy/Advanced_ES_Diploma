@@ -215,6 +215,8 @@ Almost provide all peripherals F4, F7
 
 ###### Documents and Resources for BluePil , Nucleo-64 Boards
 
+for STM32F103C8T6
+
 - **Processor Resource**
 
   - arm.com -> Products -> Cortex-M -> generic user guide cortex-m3
@@ -243,3 +245,13 @@ for STM32F446RE
 - **Nucleo-f446re Board Resources** [here](https://www.st.com/en/evaluation-tools/nucleo-f446re.html#documentation)
   - user manual
   - CAD Resources: Schematic Pack
+
+#### Microcontroller Architectures
+
+![intro](imgs/intro6.JPG)
+![intro](imgs/intro7.JPG)
+![intro](imgs/intro8.JPG)
+
+#### ATmega32 vs STM32F103
+
+![intro](imgs/intro9.JPG)
