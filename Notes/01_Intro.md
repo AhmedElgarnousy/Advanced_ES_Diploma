@@ -255,3 +255,110 @@ for STM32F446RE
 #### ATmega32 vs STM32F103
 
 ![intro](imgs/intro9.JPG)
+
+---
+
+#### ARM History
+
+[The Official History of Arm](https://newsroom.arm.com/blog/arm-official-history)
+
+**The Acorn years**
+In 1980s, Acorn Computers was established by co-founders Chris Curry and Hermann Hauser.
+
+The start-up managed to produce the `BBC Micro`, a UK government initiative that aimed to put a computer in every `classroom` in the `UK`.
+
+<p align="center">
+  <img width="60%" height="50%" src="imgs/MemMap3.png">
+</p>
+
+BBC Micro is a series of microcomputers for the computer literacy project of BBC
+
+<p align="center">
+  <img width="40%" height="50%" src="imgs/MemMap1.png">
+  <img width="40%" height="50%" src="imgs/MemMap2.png">
+</p>
+
+Professor Steve Furber and Sophie Wilson designed the very first Arm processor, the `ARM1`.
+
+`1985)` : Acorn, VLSI -> First ARM Chip (A Corn RISC Machine)
+
+**Arm is founded**
+
+`1990)` : `Apple` + Acorn + VLSI
+
+Arm was officially founded as a company as `Advanced RISC Machines Ltd`, which was a joint venture(مشروعا مشتركا) between `Acorn Computers`, `Apple Computer` (now Apple Inc.), and `VLSI Technology` (now NXP Semiconductors N.V).
+
+The company was founded by 12 Arm architecture designers
+
+<p align="center">
+  <img width="70%" height="50%" src="imgs/MemMap4.png">
+</p>
+
+`1993)` :
+
+Apple uses ARM6 for Personal Digital Assistance (PDA)
+
+<p align="center">
+  <img width="50%" height="40%" src="imgs/MemMap6.png">
+  <img width="25%" height="80%" src="imgs/MemMap5.png">
+</p>
+
+In 1993, the `Apple Newton` was launched on the `Arm architecture`. However, the product was `not a commercial success`,
+which led to Saxby(CEO) realizing that Arm as a company could not be sustained on single products, Like INTEL, etc
+
+**A new IP business model**
+
+The Arm processor was available to be licensed to many different companies for an upfront `license fee` and then royalties based on the amount of silicon produced.
+
+**Arm goes into mobile**
+
+- Nokia asked TI and TI asked ARM for processor architecture
+
+Arm signed a deal with silicon vendor, Texas Instruments, with the company advising Nokia to use the Arm designs for its upcoming GSM mobile phones.
+
+- Firstly Nokia refuse arm architecture due to big size of instruction set(all instructions was 32-bit)
+- then ARM developed thumb instruction set which convert many 32-bit instruction set to 16-bit only
+
+- the nokia produced `Nokia 6110 GSM mobile phone` with the `Arm7 processor`
+- Phone was a massive success
+<p align="center">
+  <img width="19%" height="40%" src="imgs/MemMap7.png">
+</p>
+
+> Today in 2024, more than 99 % of the world’s smartphones are based on Arm technology.
+
+**Company listing and growth**
+Despite the tech crash of the early 2000s, Arm continued to mature as a company.
+With Saxby stepping aside,and There was a new CEO (`Warren East`)
+
+Throughout the 2000s, Arm’s continued success in the mobile market.
+This led to Arm tripling its head count from 400 to 1,300 people in just three years during the ‘00s (2000 - 2003).
+
+`2001)` : ARM9 better MMU, DSP extensions
+Apple again used ARM9 in IPode and was commerial success
+
+`2002)` : ARM11 (Multi Processor, ..)
+
+**Diversifying the product line**
+
+`2004)` : ARM cortex Model
+
+increased diversification of its product line through the `Cortex-A`, `Cortex-R`, and `Cortex-M` CPU processors it brought to market in the 2000s
+
+- Cortex-M3 was the first generation
+- Cortex-M1 used in FPGA
+
+`2006)` :
+Arm purchased Falanx Microsystems A/S, a spin-off of a research project from the Norwegian University of Science and Technology, which led to the development of the `Mali GPU` product line
+
+**The rise of smartphones**
+
+`2007)` : 5 billion mobile phone celebration
+`2008)` : 10 Billion Processors
+`2009)` : M0 Generation, Lowest Power Consumption and size, most energy efficient
+`2010)` : M4
+`2011)` : Microsoft Windows on ARM
+`2012)` : Real Windows on ARM
+`2020)` : 2020 NIVIDIA Acquire ARM by 40 billions $
+
+> Scecret of success always intersted in power, speed, cost
