@@ -1,7 +1,7 @@
 # Prerequisites
 *.d
 
-# Object files
+# Object files, ignore all .o files
 *.o
 *.ko
 *.obj
@@ -11,6 +11,13 @@
 *.ilk
 *.map
 *.exp
+
+# STM32CubeIDE metadata hidden Directory
+
+*.log
+.metadata
+/.metadata
+*/.metadata
 
 # Precompiled Headers
 *.gch
