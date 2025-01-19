@@ -198,5 +198,3 @@ STM32F446RE
 ![mem_map](../imgs/mm11.JPG)
 
 ---
-
-[Printf](https://www.embedded-communication.com/en/misc/printf-with-st-link/)
