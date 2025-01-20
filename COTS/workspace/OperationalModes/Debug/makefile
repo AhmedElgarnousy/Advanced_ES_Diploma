@@ -59,8 +59,8 @@ all: main-build
 main-build: OperationalModes.elf secondary-outputs
 
 # Tool invocations
-OperationalModes.elf OperationalModes.map: $(OBJS) $(USER_OBJS) E:\Engineering\CS_Domains\EmbeddedSoftware\Advanced_ES_Diploma\COTS\workspace\OperationalModes\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "OperationalModes.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"E:\Engineering\CS_Domains\EmbeddedSoftware\Advanced_ES_Diploma\COTS\workspace\OperationalModes\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="OperationalModes.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+OperationalModes.elf OperationalModes.map: $(OBJS) $(USER_OBJS) E:\Engineering\CS_Domains\EmbeddedSoftware\02_Advanced_ES_Diploma\COTS\workspace\OperationalModes\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "OperationalModes.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"E:\Engineering\CS_Domains\EmbeddedSoftware\02_Advanced_ES_Diploma\COTS\workspace\OperationalModes\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="OperationalModes.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
