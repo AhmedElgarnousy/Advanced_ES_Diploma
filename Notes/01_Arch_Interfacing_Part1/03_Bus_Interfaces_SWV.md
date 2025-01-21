@@ -6,6 +6,8 @@
 - then check processor Memory Map architecture to see if can do pipling in accessing or not
 - in our case Cortex-M3/4
 
+- note: literal pool means flash(.rodata)
+
 ```c
 /*
 - string "Good Morning" stored in ROM(Flash .rodata section)

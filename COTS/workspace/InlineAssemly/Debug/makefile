@@ -59,8 +59,8 @@ all: main-build
 main-build: InlineAssemly.elf secondary-outputs
 
 # Tool invocations
-InlineAssemly.elf InlineAssemly.map: $(OBJS) $(USER_OBJS) E:\Engineering\CS_Domains\EmbeddedSoftware\Advanced_ES_Diploma\COTS\workspace\InlineAssemly\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "InlineAssemly.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"E:\Engineering\CS_Domains\EmbeddedSoftware\Advanced_ES_Diploma\COTS\workspace\InlineAssemly\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="InlineAssemly.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+InlineAssemly.elf InlineAssemly.map: $(OBJS) $(USER_OBJS) E:\Engineering\CS_Domains\EmbeddedSoftware\02_Advanced_ES_Diploma\COTS\workspace\InlineAssemly\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "InlineAssemly.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"E:\Engineering\CS_Domains\EmbeddedSoftware\02_Advanced_ES_Diploma\COTS\workspace\InlineAssemly\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="InlineAssemly.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -21,27 +21,50 @@
 
 int main(void)
 {
-	uint32_t CTRL_Reg = 20;
-	__asm volatile ("MRS  %0 ,CONTROL":"=r"(CTRL_Reg));  // put 0X20001000 value inside R1
-	/*
-	int VAR = 10;
-	__asm volatile ("MOV R0, %0"::"r"(VAR));  // put 0X20001000 value inside R1
-	 */
-
-	/*
-	__asm volatile ("LDR R1, =#0x20001000");  // put 0X20001000 value inside R1
-
-	__asm volatile ("LDR R2, =#0x20001004");  // put 0X20001004 value inside R2
-
-	__asm volatile ("LDR R0, [R1]"); // get address inside R1, fetch the data, put it inside R0
-
-	__asm volatile ("LDR R1, [R2]"); // get address inside R2, fetch the data, put it inside R1
-
-	__asm volatile ("ADD R0, R0, R1"); // Add operands in R0, R1, put result inside R0
-
-	__asm volatile ("STR R0, [R2]"); // Store value from R0 inside memory location whose address is R2
-	*/
+	uint32_t *ptr = (uint32_t *) 0x20000008;
+	uint32_t var = 10;
+	__asm volatile ("MOV %0, %1" : "=r"(var) : "r"(ptr) );
 
 	/* Loop forever */
 	for(;;);
 }
+
+
+	/*
+	uint32_t var = 100;
+	__asm volatile ("MOV R0, %0"::"r"(var));
+	uint32_t ctrlReg = 10;
+	__asm volatile ("MRS %0, CONTROL":"=r"(ctrlReg)::);
+	*/
+
+	/*
+	uint32_t var1 = 2, var2 = 4;
+
+	__asm volatile ("MOV %0, %1" : "=r"(var1) : "r"(var2) );
+	 */
+
+
+/*
+uint32_t CTRL_Reg = 20;
+__asm volatile ("MRS  %0 ,CONTROL":"=r"(CTRL_Reg));  // put 0X20001000 value inside R1
+int VAR = 10;
+__asm volatile ("MOV R0, %0"::"r"(VAR));  // put 0X20001000 value inside R1
+ */
+
+
+//	__asm volatile ("LDR R0, [R1]");
+//	__asm volatile ("STR R1, [R2]");
+//	__asm volatile ("ADD R2, R0, R1");
+/*
+__asm volatile ("LDR R1, =#0x20001000");  // put 0X20001000 value inside R1
+
+__asm volatile ("LDR R2, =#0x20001004");  // put 0X20001004 value inside R2
+
+__asm volatile ("LDR R0, [R1]"); // get address inside R1, fetch the data, put it inside R0
+
+__asm volatile ("LDR R1, [R2]"); // get address inside R2, fetch the data, put it inside R1
+
+__asm volatile ("ADD R0, R0, R1"); // Add operands in R0, R1, put result inside R0
+
+__asm volatile ("STR R0, [R2]"); // Store value from R0 inside memory location whose address is R2
+*/
