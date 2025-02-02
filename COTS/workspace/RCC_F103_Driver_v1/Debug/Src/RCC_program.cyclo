@@ -1,0 +1,7 @@
+RCC_program.c:13:6:RCC_voidSetClkStatus	1
+RCC_program.c:20:6:RCC_voidSetSysClk	1
+RCC_program.c:24:6:RCC_voidHSEConfig	1
+RCC_program.c:28:6:RCC_voidPLLConfig	1
+RCC_program.c:33:6:RCC_voidAHBEnableClk	3
+RCC_program.c:49:6:RCC_voidAPB1EnableClk	3
+RCC_program.c:64:6:RCC_voidAPB2EnableClk	3

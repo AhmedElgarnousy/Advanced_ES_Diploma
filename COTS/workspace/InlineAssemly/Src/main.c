@@ -21,13 +21,30 @@
 
 int main(void)
 {
-	uint32_t *ptr = (uint32_t *) 0x20000008;
-	uint32_t var = 10;
-	__asm volatile ("MOV %0, %1" : "=r"(var) : "r"(ptr) );
+	uint32_t var1 = 2;
+	uint32_t var2 = 4;
+
+	__asm volatile ("MOV %0, %1" : "=r"(var2) : "r"(var1) );
+
+
 
 	/* Loop forever */
 	for(;;);
 }
+
+	/*
+	//  Assignment2
+		uint32_t *ptr = (uint32_t *) 0x20000008;
+		uint32_t var = 10;
+		__asm volatile ("MOV %0, %1" : "=r"(var) : "r"(ptr) );
+	 */
+	/*
+	 // assignment 1
+	uint32_t var1 = 2;
+	uint32_t var2 = 4;
+
+	__asm volatile ("MOV %0, %1" : "=r"(var2) : "r"(var1) );
+	 */
 
 
 	/*
@@ -38,9 +55,7 @@ int main(void)
 	*/
 
 	/*
-	uint32_t var1 = 2, var2 = 4;
 
-	__asm volatile ("MOV %0, %1" : "=r"(var1) : "r"(var2) );
 	 */
 
 

@@ -150,8 +150,10 @@ __asm volatile ("MRS %0, CONTROL":"=r"(ctrlReg)::);
 
 ---
 
-##### Assignments
+##### Assignment
 
+- Copy content of C Varaible(VAR1) IN another C Varaible (Var2)
+- Copy contents of a pointer into another variable
 <p align="center">
   <img width="80%" height="50%" src="../imgs/IS14.JPG">
 </p>
@@ -175,8 +177,3 @@ __asm volatile ("MRS %0, CONTROL":"=r"(ctrlReg)::);
 
 - cortex-m4 dgug document
 - [ARM GCC Inline Assembler Cookbook](https://www.ethernut.de/en/documents/arm-inline-asm.html)
-
-### Assignment
-
-- Copy content of C Varaible(VAR1) IN another C Varaible (Var2)
-- Copy contents of a pointer into another variable
