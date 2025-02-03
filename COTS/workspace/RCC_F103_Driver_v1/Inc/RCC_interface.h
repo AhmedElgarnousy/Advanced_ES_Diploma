@@ -10,8 +10,8 @@ typedef enum
 
 typedef enum
 {
-    ON,
     OFF,
+    ON,
 }RCC_ClkStatus;
 
 typedef enum 
