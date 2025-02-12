@@ -84,13 +84,13 @@ access levels are used to `control access` to `system resources` and `enhance se
 - `RO` -> `R12` (Total 13)
   - `32-bits high-speed storage` inside the `processor`.
   - `general purpose registers(GPRs)` contains either `data` or `addresses`.
-- `R13` is caledd SP (Stack Pointer)
+- `R13` is called SP (Stack Pointer)
   - used to track stack memory
   - PSP: Program/process stack pointer
   - MSP: main stack pointer
   - Banked version of SP
   - physically there are 3 stack pointers(SP,MSP,PSP)
-- R14: LR link register
+- `R14`: LR link register
 
   - used to save the return info from ISR, Subroutine, Function call
   - used to store the return location for functions.

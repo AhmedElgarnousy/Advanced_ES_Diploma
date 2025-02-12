@@ -16,34 +16,34 @@ typedef enum
 
 typedef enum 
 {
-    DIV_BY_2,
     DIV_BY_1,
+    DIV_BY_2,
 }RCC_HSE_Config;
 
 typedef enum 
 {
 	X2,
-	X3,
-	X4,
-	X5,
-	X6,
-	X7,
-	X8,
-	X9,
-	X10,
-	X11,
-	X12,
-	X13,
-	X14,
-	X15,
-	X16,
+	X3 = (1<<17),
+	X4 = (2<<17),
+	X5 = (3<<17),
+	X6 = (4<<17),
+	X7 = (5<<17) ,
+	X8 = (6<<17),
+	X9 = (7<<17),
+	X10 = (8<<17),
+	X11 = (9<<17),
+	X12 = (10<<17),
+	X13 = (11<<17),
+	X14 = (12<<17),
+	X15 = (13<<17),
+	X16 = (14<<17),
 }RCC_PLL_MUL;
 
 typedef enum 
 {
-	HSE_SRC,
-	HSI_SRC,
-}RCC_SRC_MUX;
+	HSI_DIV_BY_2_PLL_SRC,
+	HSE_PLL_SRC,
+}RCC_PLL_SRC_MUX;
 
 typedef enum 
 {
@@ -112,7 +112,7 @@ void RCC_voidSetSysClk(RCC_ClkType Copy_RCC_clkType);
 
 void RCC_voidHSEConfig(RCC_HSE_Config Copy_RCC_HSE_Config);
 
-void RCC_voidPLLConfig(RCC_PLL_MUL Copy_RCC_PLL_MUX, RCC_SRC_MUX Copy_RCC_SRC_MUX);
+void RCC_voidPLLConfig(RCC_PLL_MUL Copy_RCC_PLL_MUL, RCC_PLL_SRC_MUX Copy_RCC_PLL_SRC_MUX);
 
 void RCC_voidAHBEnableClk(RCC_AHB_EN_PERIPHERAL Copy_RCC_AHB_EN_PERIPHERAL, uint8_t Copy_Enable);
 

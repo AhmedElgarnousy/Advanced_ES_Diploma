@@ -12901,3 +12901,64 @@ trailer
 startxref
 116
 %%EOF
+172 0 obj
+<</CropBox[ 0 0 595.275 792]/Annots[ 173 0 R 174 0 R 175 0 R 176 0 R 4556 0 R 4557 0 R]/Parent 3987 0 R/B[ 4289 0 R]/Contents 178 0 R/Rotate 0/MediaBox[ 0 0 595 792]/Thumb 2209 0 R/Resources 177 0 R/Type/Page>>
+endobj
+4556 0 obj
+<</Type/Annot/Subtype/Highlight/P 172 0 R/F 4/M(D:20250205143848+02'00')/NM(3e964e41-32b5-4880-9323-ba05179d8b74)/Rect[ 107.0385 170.5206 132.0432 180.8706]/C[ 1 .941176 .4]/Popup 4557 0 R/CA 1/CreationDate(D:20250205143848+02'00')/QuadPoints[ 107.0385 180.8706 132.0432 180.8706 107.0385 170.5206 132.0432 170.5206]/AP<</N 4564 0 R>>>>
+endobj
+4557 0 obj
+<</Type/Annot/Subtype/Popup/Open false/F 28/Rect[ 612 60.8706 792 180.8706]/Parent 4556 0 R>>
+endobj
+4562 0 obj
+<</Length 108/Type/XObject/Subtype/Form/FormType 1/BBox[ 107.0385 170.5206 132.0432 180.8706]/Matrix[ 1 0 0 1 -107.0385 -170.5206]/Resources<</ProcSet[/PDF]>>>>
+stream
+1 .941176 .4 rg
+.646875 w
+107.0385 170.5206 m
+107.0385 180.8706 l
+132.0432 180.8706 l
+132.0432 170.5206 l
+f
+
+endstream
+endobj
+4563 0 obj
+<</Length 9/Type/XObject/Subtype/Form/FormType 1/BBox[ 0 0 25.0047 10.35]/Matrix[ 1 0 0 1 0 0]/Resources<</ProcSet[/PDF]/XObject<</Form 4562 0 R>>>>/Group<</S/Transparency>>>>
+stream
+/Form Do
+
+endstream
+endobj
+4564 0 obj
+<</Length 20/Type/XObject/Subtype/Form/FormType 1/BBox[ 0 0 25.0047 10.35]/Matrix[ 1 0 0 1 0 0]/Resources<</ProcSet[/PDF]/XObject<</MWFOForm 4563 0 R>>/ExtGState<</R0 4565 0 R>>>>>>
+stream
+/R0 gs
+/MWFOForm Do
+
+endstream
+endobj
+4565 0 obj
+<</Type/ExtGState/AIS false/BM/Multiply>>
+endobj
+4026 0 obj
+<</CreationDate(D:20160126133755Z)/Subject(ARM Cortex-M4 Devices Generic User Guide (PDF). This documentation provides generic technical information for devices that use the Cortex-M4 processor. It describes the processor, its instruction set and memory model, and core peripherals and system interface.)/Copyright(Copyright ??2010-2011 ARM. All rights reserved.)/Author(ARM Limited)/Creator(FrameMaker 8.0)/Keywords(Processors, Microcontroller, Cortex-M, Cortex-M4, Software Developers, Embedded Software Developers, Architecture, Architecture, 32-bit, Microarchitecture, Debug and Trace, ETM,  ARM Processor Licensee)/Producer(Acrobat Distiller 11.0 (Windows))/ModDate(D:20250205143851+02'00')/Title(Cortex-M4 Devices Generic User Guide)>>
+endobj
+xref
+172 1
+0001783188 00000 n
+4026 1
+0001784710 00000 n
+4556 2
+0001783416 00000 n
+0001783771 00000 n
+4562 4
+0001783883 00000 n
+0001784189 00000 n
+0001784411 00000 n
+0001784650 00000 n
+trailer
+<</Size 4566/Prev 116/Root 4028 0 R/Info 4026 0 R/ID[<310E17CABE6F9F2BD37F82D174D3CF49><FA53280AE5431D8E04AB417BB7940F12>]>>
+startxref
+1785470
+%%EOF

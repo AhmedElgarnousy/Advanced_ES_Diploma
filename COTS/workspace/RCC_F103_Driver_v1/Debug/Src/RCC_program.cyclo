@@ -1,7 +1,7 @@
-RCC_program.c:13:6:RCC_voidSetClkStatus	1
-RCC_program.c:20:6:RCC_voidSetSysClk	1
-RCC_program.c:24:6:RCC_voidHSEConfig	1
-RCC_program.c:28:6:RCC_voidPLLConfig	1
-RCC_program.c:33:6:RCC_voidAHBEnableClk	3
-RCC_program.c:49:6:RCC_voidAPB1EnableClk	3
-RCC_program.c:64:6:RCC_voidAPB2EnableClk	3
+RCC_program.c:10:6:RCC_voidSetClkStatus	17
+RCC_program.c:58:6:RCC_voidSetSysClk	5
+RCC_program.c:68:6:RCC_voidHSEConfig	3
+RCC_program.c:83:6:RCC_voidPLLConfig	3
+RCC_program.c:106:6:RCC_voidAHBEnableClk	3
+RCC_program.c:122:6:RCC_voidAPB1EnableClk	3
+RCC_program.c:137:6:RCC_voidAPB2EnableClk	3

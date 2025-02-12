@@ -1,4 +1,4 @@
-<h2 align = "center">Reset and Control Peripheral (RCC)</h2>
+<h2 align = "center">Reset and Clock Control Peripheral (RCC)</h2>
 
 RCC is an important peripheral that controls `power modes` and `reset mode` and `clock system`
 
@@ -11,16 +11,14 @@ These pulses act as a timing reference, synchronizing the operation of the syste
 
 ###### why do we need the clock?
 
-Inituatively to know the time
+Inituatively like the heart and blood for humens
 
-`1.synchronizing:`
+`1.synchronizing, and Execution Timing Control:`
 
-- PCs and Microcontroller are synchronous circuits
+- PCs and Microcontrollers are synchronous circuits
 - which uses the clock to ensure that different components (e.g., CPU, memory, and peripherals) work in harmony.
   - Every operation, like fetching an instruction or transferring data, occurs in sync with the clock pulses.
 - also MCU peripherals like timers, communication modules (UART, SPI, I2C), and ADC depend on the clock for timing their operations.
-
-`2.Execution Timing Control:`
 
 - Instructions are executed in a series of cycles, so a higher clock frequency typically allows faster processing.
 - For example, a 1 GHz clock means 1 billion cycles per second.
@@ -54,7 +52,7 @@ Inituatively to know the time
 | EMI (ElectroMagnetic Interferance) |        worest        |        ~         |         ~         |
 |       vibration environment        |         best         |      worset      |         ~         |
 
-- `note`:
+- **note**:
 
   - Settling time: time between power up and frequency stablization
   - EMI (ElectroMagnetic Interferance) due to high power source or electric field
@@ -66,7 +64,7 @@ Inituatively to know the time
 
 ### ST RCC Peripheral
 
-###### STM32F103C8T6
+###### STM32F103C8T6 Reference Manual
 
 <p align="center">
   <img width="80%" height="50%" src="../imgs/RCC1.JPG">
@@ -74,7 +72,7 @@ Inituatively to know the time
 
 ##### Clocks
 
-> _Three different clock sources can be used to **drive** the system clock (**SYSCLK**):_
+> 3 different clock sources can be used to **drive** the system clock (==**SYSCLK**==):\_
 
 - HSI oscillator clock
 - HSE oscillator clock
@@ -83,9 +81,9 @@ Inituatively to know the time
 `note`: PLL circuit multiplies clock frequency(opposite to prescaller)
 
 - The devices have the following two secondary clock sources:
-  - 40 kHz low speed internal RC (LSI RC), which drives the independent watchdog and
+  - 40 kHz low speed internal RC (**LSI RC**), which drives the independent watchdog and
     optionally the RTC used for Auto-wakeup from Stop/Standby mode.
-  - 32.768 kHz low speed external crystal (LSE crystal), which optionally drives the
+  - 32.768 kHz low speed external crystal (**LSE crystal**), which optionally drives the
     real-time clock (RTCCLK)
 
 ##### HSE clock ==source==
@@ -101,7 +99,7 @@ sources:
 
 - In the HSE user external clock (RC) mode(**HSE bypass** only one pin)
 
-  - may be through Timer555
+  - may be through Timer 555
   - or MCU drive another MCU from this pin
   <p align="center">
     <img width="80%" height="50%" src="../imgs/RCC3.JPG">
@@ -110,7 +108,7 @@ sources:
 - Used for
   - clock cascading: series of MCUs works with the same clock source
   - synchronous communication protocol like USART.
-- FROM Nucleo-64 User Manual
+- From Nucleo-64 User Manual
   - OSC clock supply
   <p align="center">
     <img width="80%" height="50%" src="../imgs/RCC4.JPG">
@@ -149,11 +147,12 @@ _Phase Locked Loop_
 
 ##### `STM32CubeIDE` provide very useful tool for code generation and clock configurations
 
+- `note`: ST provide HAL (MCAL)
+
 ##### ==CubeMX==
 
 - To use cubeMX in STM32CubeIDE
 
-  - ST provide HAL (MCAL)
   <p align="center">
     <img width="80%" height="50%" src="../imgs/RCC7.JPG">
   </p>
@@ -234,9 +233,22 @@ Hi-Z. Like HSE external crystal/ceramic oscilator
   hardware. An interrupt can be generated if enabled in the Clock interrupt register
   (RCC_CIR).
 
+- as previous clock sources LSI , HSE also have enable bits and ready flags
+
 <p align="center">
     <img width="90%" height="90%" src="../imgs/RCC11.JPG">
   </p>
+
+##### MCO pin: Microcontroller Clock Output
+
+<p align="center">
+    <img width="80%" height="50%" src="../imgs/RCC12.JPG">
+  </p>
+
+##### Why can i out HSE, HSI specially as MCO source?
+
+- mainly for measurements specially HSI
+- or for example you bought a new crystal oscilator and want to measure by osciliscope
 
 ---
 

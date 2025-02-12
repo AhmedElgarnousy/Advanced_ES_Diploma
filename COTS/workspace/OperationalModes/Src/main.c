@@ -19,33 +19,42 @@
 
 #include <stdio.h>
 
-void GenerateInterrupt(void)
-{
-	uint32_t* pSTIR= (uint32_t*)0xE000EF00;
-	uint32_t* pISER0= (uint32_t*)0xE000E100;
+//void GenerateInterrupt(void)
+//{
+//	uint32_t* pSTIR= (uint32_t*)0xE000EF00;
+//	uint32_t* pISER0= (uint32_t*)0xE000E100;
+//
+//	//Enable IRQ3 Interrupt
+//	*pISER0 |= 1<<3;
+//
+//	//Generate Software interrupt for IRQ3
+//	*pSTIR = (3 &0x1FF);
+//}
 
-	//Enable IRQ3 Interrupt
-	*pISER0 |= 1<<3;
-
-	//Generate Software interrupt for IRQ3
-	*pSTIR = (3 &0x1FF);
+void SwitchToUnprivilegeMode() {
+	// 1- read CONTROL register
+	__asm volatile ("MRS R0, CONTROL");
+	// 2- Modify ORing '|'
+	__asm volatile ("ORR R0, #0x01");
+	// 3- Write
+	__asm volatile ("MSR CONTROL, R0");
 }
-
 
 int main(void)
 {
-	printf("In Thread mode, before interrupt\n");
-
-	GenerateInterrupt();
-
-	printf("In Thread mode, after interrupt\n");
+//	printf("In Thread mode, before interrupt\n");
+//
+//	GenerateInterrupt();
+//
+//	printf("In Thread mode, after interrupt\n");
+	SwitchToUnprivilegeMode();
 
     /* Loop forever */
 	for(;;);
 }
 
-void RTC_WKUP_IRQHandler (void)
-{
-	printf("In handler mode :  ISR\n");
-}
+//void RTC_WKUP_IRQHandler (void)
+//{
+//	printf("In handler mode :  ISR\n");
+//}
 

@@ -15,5 +15,40 @@ typedef struct
     uint32_t CSR;               /*   Control/status register                */
 } RCC_register_t;
 
+RCC_register_t * RCC = (RCC_register_t*) RCC_BASE_ADDRESS;
+
+
+// RCC RC Register Pins
+enum
+{
+	HSI_ON ,
+	HSI_RDY,
+	HSITRIM0 = 3,
+	HSITRIM1,
+	HSITRIM2,
+	HSITRIM3,
+	HSITRIM4,
+	HSICAL0,
+	HSICAL1,
+	HSICAL2,
+	HSICAL3,
+	HSICAL4,
+	HSICAL5,
+	HSICAL6,
+	HSICAL7,
+	HSE_ON,
+	HSE_RDY,
+	HSE_BYP,
+	CSS_ON,
+	PLL_ON = 24,
+	PLL_RDY,
+};
+
+// RCC_CFGR Registers Pins
+enum {
+	PLLSRC = 16,
+	PLLXTPRE,
+};
+
 
 #endif /* RCC_REGISTER_H_ */
