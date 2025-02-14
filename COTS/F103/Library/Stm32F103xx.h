@@ -15,8 +15,8 @@
 #define GPIOC_BASE_ADDRESS 0x40011000UL
 #define GPIOD_BASE_ADDRESS 0x40011400UL
 #define GPIOE_BASE_ADDRESS 0x4001800UL
-#define GPIOF_BASE_ADDRESS 0x40011C00UL
-#define GPIOG_BASE_ADDRESS 0x40012000UL
+// #define GPIOF_BASE_ADDRESS 0x40011C00UL
+// #define GPIOG_BASE_ADDRESS 0x40012000UL
 
 /************* RCC Registers Definition Structure***************/
 typedef struct
@@ -58,7 +58,5 @@ typedef struct
 #define GPIOC ((GPIO_RegDef_t *)GPIOC_BASE_ADDRESS)
 #define GPIOD ((GPIO_RegDef_t *)GPIOD_BASE_ADDRESS)
 #define GPIOE ((GPIO_RegDef_t *)GPIOE_BASE_ADDRESS)
-#define GPIOF ((GPIO_RegDef_t *)GPIOF_BASE_ADDRESS)
-#define GPIOG ((GPIO_RegDef_t *)GPIOG_BASE_ADDRESS)
 
 #endif /* STM32F103XX_H_ */

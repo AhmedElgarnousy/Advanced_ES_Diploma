@@ -103,3 +103,8 @@ we will create a config.h -> because will not use pre-build configuration
 - [Hungarian_notation](https://en.wikipedia.org/wiki/Hungarian_notation)
 
 note: OutputSpeed_t , OutputType_t only in case mode was Output or alternate function
+
+- System Architecture from Reference manual F103 for bluePill
+<p align="center">
+      <img width="80%" height="50%" src="../imgs/GPIO7.JPG">
+</p>

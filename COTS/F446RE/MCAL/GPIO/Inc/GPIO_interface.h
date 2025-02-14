@@ -84,6 +84,11 @@ typedef enum
     PIN_LOW = 0,
     PIN_HIGH,
 } PinVal_t;
+typedef enum
+{
+    OK = 0,
+    NOK,
+} ERR_STATUS_t;
 
 typedef struct
 {
@@ -94,9 +99,9 @@ typedef struct
     OutputType_t OutPutType;
     PullUpDown_t PullType;
     AltFunc_t AltFunc;
-} PinConfig_t;
+} GPIO_PinConfig_t;
 
-uint8_t GPIO_u8PinInit(const PinConfig_t *PinConfig);
+uint8_t GPIO_u8PinInit(const GPIO_PinConfig_t *PinConfig);
 
 uint8_t GPIO_u8SetPinValue(Port_t Port, Pin_t PinNum, PinVal_t PinVal);
 
