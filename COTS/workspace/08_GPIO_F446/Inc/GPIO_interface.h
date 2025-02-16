@@ -1,6 +1,14 @@
 #ifndef GPIO_INTERFACE_H_
 #define GPIO_INTERFACE_H_
 
+/* CONST better to be CAPITAL Letters */
+
+
+/********
+ * @Port_t enum
+ *
+ *
+ */
 typedef enum
 {
     PORTA = 0,
@@ -13,7 +21,12 @@ typedef enum
     PORTH,
 } Port_t;
 
-// CONST better to be CAPITAL Letters
+
+/********
+ * @Pin_t enum
+ *
+ *
+ */
 typedef enum
 {
     PIN0 = 0,
@@ -33,6 +46,9 @@ typedef enum
     PIN14,
     PIN15,
 } Pin_t;
+
+
+
 typedef enum
 {
     INPUT = 0,
@@ -79,6 +95,11 @@ typedef enum
     PULLDOWN,
 } PullUpDown_t;
 
+/********
+ * @PinVal_t enum
+ *
+ *
+ */
 typedef enum
 {
     PIN_LOW = 0,

@@ -1,0 +1,4 @@
+main.c:35:5:main	1
+main.c:62:5:Add	1
+main.c:66:6:GenerateException	1
+main.c:71:6:SVC_Handler	1
