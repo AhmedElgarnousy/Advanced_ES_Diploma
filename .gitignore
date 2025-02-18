@@ -7,11 +7,20 @@
 *.obj
 *.elf
 
-# Linker output
-*/Debug
-/Debug
+# My added file
+Drivers/
+Debug/
+*.cproject
+*.mxproject
+*.project
+*.ioc
+*.setting
+*.xml
+*.prefs
 *.launch
-/Debug
+
+
+# Linker output
 *.ilk
 *.map
 *.exp
