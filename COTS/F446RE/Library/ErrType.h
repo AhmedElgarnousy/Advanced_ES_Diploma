@@ -5,6 +5,6 @@
 #define NOK 2U
 #define NULL_PTR_ERR 3U
 
-#define NULL (void *)0 /* or just 0 */
+#define NULL (void*)0 /* or just 0 */
 
 #endif /* ERR_TYPE_H_*/

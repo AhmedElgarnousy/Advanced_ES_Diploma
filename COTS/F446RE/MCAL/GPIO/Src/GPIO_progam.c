@@ -1,7 +1,7 @@
 /*********************************************************************************************************************************************************/
 /*
  * @file GPIO_prog.c
- * @author Ahmed Kamal
+ * @author Ahmed Kamal Elgarnousy
  * @brief The GPIO main source file, including functions's definitions
  *
  */
@@ -72,10 +72,10 @@ uint8_t GPIO_u8PinInit(const GPIO_PinConfig_t *PinConfig)
 
 /*******************************************************************************
  * @fn GPIO_u8SetPinValue
- * @brief the function sets the GPIO pin value
- * @param[in] Port: specify the Port Number
- * @param[in] PinNum: specify the pin Number
- * @param[in] PinVal: specify pin value
+ * @brief the function outputs a certain value on an output pin
+ * @param[in] Port:   specify the Port Number, get options @Port_t enum Port_t
+ * @param[in] PinNum: specify the pin Number, get options @Pin_t enum PinNum
+ * @param[in] PinVal: specify the output pin value, get options @PinVal_t enum PinVal
  * @retval ErrorStatus
  *
  */
@@ -109,7 +109,7 @@ uint8_t GPIO_u8SetPinValue(Port_t Port, Pin_t PinNum, PinVal_t PinVal)
 }
 
 /*******************************************************************************
- * @fn GPIO_u8SetPinValue
+ * @fn GPIO_u8TogglePinValue
  * @brief the function toggles the GPIO pin value
  * @param[in] Port: specify the Port Number
  * @param[in] PinNum: specify the pin Number
@@ -132,7 +132,7 @@ uint8_t GPIO_u8TogglePinValue(Port_t Port, Pin_t PinNum)
 }
 
 /*******************************************************************************
- * @fn GPIO_u8SetPinValue
+ * @fn GPIO_u8ReadPinValue
  * @brief the function reads/gets the GPIO pin value
  * @param[in] Port: specify the Port Number
  * @param[in] PinNum: specify the pin Number

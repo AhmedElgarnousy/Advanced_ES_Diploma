@@ -32,25 +32,22 @@
 int Add(int A, int B, int C, int D);
 void GenerateException(void);
 
+void ChangeIntoPSP(void);
+
 int main(void)
 {
 //	__asm volatile("LDR R0, =#STACK_PSP_END"); // caused error
 
-	uint32_t SPVal = 0x02; // 0b00000010 SEL PSP Pin
-	__asm volatile(".equ SRAM_END, (0x20000000 + (4 * 1024))");
-	__asm volatile(".equ STACK_PSP_END, SRAM_END - 512");
 
-	/* Initialize PSP with valid stack pointer value */
-	__asm volatile("LDR R0, =STACK_PSP_END");
-	__asm volatile("MSR PSP, R0");
-
-	/*2- Link SP to PSP */
-	__asm volatile("MSR CONTROL, %0"::"r"(SPVal));
 
 
     /* Loop forever */
+//	uint32_t SPVal = 0x02; // 0b00000010 SEL PSP Pin
 
 	int Result ;
+
+	ChangeIntoPSP();
+
 	Result = Add(1, 2 , 3 , 4);
 
 	GenerateException();
@@ -63,6 +60,24 @@ int Add(int A, int B, int C, int D)
 {
 	return A + B + C + D;
 }
+
+void ChangeIntoPSP(void)
+{
+	// 128k in Nucleo, 20K in bluepill
+	__asm volatile(".equ SRAM_END, (0x20000000 + (20 * 1024))");
+	__asm volatile(".equ STACK_PSP_END, SRAM_END - 512");
+
+	/* Initialize PSP with valid stack pointer value */
+	__asm volatile("LDR R0, =STACK_PSP_END");
+	__asm volatile("MSR PSP, R0");
+
+	/*2- Link SP to PSP */
+//	__asm volatile("MSR CONTROL, %0"::"r"(SPVal));
+
+	__asm volatile("LDR R0, =#2");
+	__asm volatile("MSR CONTROL, R0");
+}
+
 void GenerateException(void)
 {
 	__asm volatile ("SVC #0x2");

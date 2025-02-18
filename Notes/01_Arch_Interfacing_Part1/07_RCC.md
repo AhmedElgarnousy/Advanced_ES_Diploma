@@ -11,7 +11,11 @@ These pulses act as a timing reference, synchronizing the operation of the syste
 
 ###### why do we need the clock?
 
-Inituatively like the heart and blood for humens
+<p align="center">
+
+  <p> Inituatively like the heart and blood for humens </p>
+  <img width="40%" height="30%" src="../imgs/RCC14.JPG">
+</p>
 
 `1.synchronizing, and Execution Timing Control:`
 
@@ -243,15 +247,164 @@ Hi-Z. Like HSE external crystal/ceramic oscilator
 
 <p align="center">
     <img width="80%" height="50%" src="../imgs/RCC12.JPG">
-  </p>
+</p>
 
 ##### Why can i out HSE, HSI specially as MCO source?
 
 - mainly for measurements specially HSI
 - or for example you bought a new crystal oscilator and want to measure by osciliscope
 
----
+##### RCC2
+
+- Download ST-Link utility from ST
+
+  - used mainly for burn hex file to board
+  - or update firmware on the debugger(st-link)
+  <p align="center">
+      <img width="80%" height="50%" src="../imgs/RCC13.JPG">
+  </p>
+
+- **observation**: In AVR MCs clock always enabled by default to all peripherals, But in advanced MCs, doesn't enabled by default for `power saving`
+
+  - because even if peripheral powered off(Not used) but clock enabled, also amount of power consumed through tracking enable/disable bit to know if peripheral powered on or not.
+  - but if clock itself disabled No power consuming(like died).
+
+- so in modern MCs you must enable its peripheral before using through RCC peripheral registers.
+- so we have 2 switches for each peripheral, clock switch and en/disable switch
+
+- example in stm32CubeIDE for stm32
+  - try to configure ADC peripheral for example before enabling it's clock bit through RCC in stm32 MCs, it will not respond
+
+#### Notes on RCC registers Description in F103(bluepill)
+
+_F103 reference manual, CH7_
+
+**Note**: reference manual for serverl MCU, so may contain peripherals that NOT exist in your MCU, so you have to look in MC datasheet.
+
+<p align="center">
+    <img width="90%" height="50%" src="../imgs/RCC16.JPG">
+    <img width="90%" height="50%" src="../imgs/RCC17.JPG">
+
+</p>
+
+###### 7.3.1 Clock Control Register(RCC_CR)
+
+<p align="center">
+    <img width="90%" height="50%" src="../imgs/RCC15.JPG">
+</p>
+
+`-` All I/O memory registers is 32bit
+`-` Each clock system(HSI, HSE, PLL) has ready flag(like :`HSIRDY`, etc), because clock will NOT ready after enabling directly.
+
+`-` `CSSON`: Clock security System enable
+Clock security is circuit inside MC to track HSE if it fails.
+
+- even If the HSE oscillator is used directly or indirectly as the system clock (indirectly means: it is used as PLL input clock)
+  - a detected failure causes a switch of the system clock to the HSI oscillator and the disabling of the external HSE oscillator, and the PLL is disabled too if HSE used as input to PLL.
+- Once the CSS(CSSC bit sets ) is enabled and if the HSE clock fails, the CSS interrupt occurs and an NMI is automatically generated. The NMI will be executed indefinitely(الي اجل غير مسمي ) unless the CSS interrupt pending bit is cleared.( clear the CSS interrupt
+  by setting the CSSC bit in the Clock interrupt register (RCC_CIR).)
+  (note The option of generating interrupt provided from ARM as an optional feature for MC Vendor through making The CSSI is linked to the Cortex®-M3 NMI (Non-Maskable Interrupt) exception vector)
+
+`-` `HSEBYP`:
+this bit sets in case of connecting external clock with 1 pin(like RC Clock)
+or as input to another Microcontroller.
+
+`-` `HSEON`:
+
+- This bit cannot be reset(cleared) if the HSE oscillator is used directly or indirectly as the system clock.
+- you have to switch to another clock sources doesn't depend on HSE.
+
+`-` `HSICAL[7:0]`: Internal high-speed clock calibration(read only)
+
+These bits are initialized automatically at startup for calibration by vendor, because HSI is `RC` clock source that effected by temperature, etc from physical characteristics (may be due to packaging chips in another country or weather).
+
+`-` `HSITRIM[4:0]`: Internal high-speed clock trimming
+(read/write bits)
+
+- used for user calibration
+- These bits provide an additional user-programmable trimming value that is added to the
+  HSICAL[7:0] bits.
+- It can be programmed to adjust to variations in voltage and temperature that influence the frequency of the internal HSI RC.
+- The default value is 16
+- when added to the HSICAL value, should trim the HSI to 8 MHz ± 1%(default value for HSI).
+- The trimming step (Fhsitrim) is around 40 kHz between two consecutive HSICAL steps.
+- if you notes by oscilliscope value is 8.04 MHz, set value to 15
+
+###### 7.3.2 Clock configuration register (RCC_CFGR)
+
+<p align="center">
+    <img width="90%" height="50%" src="../imgs/RCC18.JPG">
+</p>
+
+`-` `SWS`: System Clock switch status
+
+- indicate which clock source is used as system clock.
+  `-` `SW`: System clock switch
+- to select SYSCLK source.
+
+```
+لان ممكن تكون مختار حاجه واللي حاصل حاجه تانيه
+```
+
+###### 7.3.3 Clock interrupt register (RCC_CIR)
+
+<p align="center">
+    <img width="90%" height="50%" src="../imgs/RCC19.JPG">
+</p>
+
+###### 7.3.4 APB2 peripheral reset register (RCC_APB2RSTR)
+
+<p align="center">
+    <img width="90%" height="50%" src="../imgs/RCC20.JPG">
+</p>
+
+###### 7.3.5 APB1 peripheral reset register (RCC_APB1RSTR)
+
+<p align="center">
+    <img width="90%" height="50%" src="../imgs/RCC21.JPG">
+</p>
+
+###### 7.3.6 AHB peripheral clock enable register (RCC_AHBENR)
+
+- enable clock for peripherals connected on this bus
+
+<p align="center">
+    <img width="90%" height="50%" src="../imgs/RCC23.JPG">
+</p>
+
+###### 7.3.7 APB2 peripheral clock enable register (RCC_APB2ENR)
+
+<p align="center">
+    <img width="90%" height="50%" src="../imgs/RCC24.JPG">
+    <img width="90%" height="50%" src="../imgs/RCC25.JPG">
+</p>
+
+###### 7.3.8 APB1 peripheral clock enable register (RCC_APB1ENR)
+
+<p align="center">
+    <img width="90%" height="50%" src="../imgs/RCC26.JPG">
+</p>
+
+###### 7.3.9 Backup domain control register (RCC_BDCR)
+
+<p align="center">
+    <img width="90%" height="50%" src="../imgs/RCC27.JPG">
+</p>
+
+###### 7.3.10 Control/status register (RCC_CSR)
+
+<p align="center">
+    <img width="90%" height="50%" src="../imgs/RCC28.JPG">
+</p>
+
+###### F103xx Block Diagram
+
+From F103C8 datasheet to see your interested peripherals
+
+<p align="center">
+    <img width="90%" height="50%" src="../imgs/RCC22.JPG">
+</p>
 
 ##### References
 
-- [STM32F103_Reference Manual Page: 90-122, ch7:Low-, medium-, high- and XL-density reset and clock control (RCC)]
+- [STM32F103_Reference Manual Page: 90-122, ch7:Low, medium-, high- and XL-density reset and clock control (RCC)]

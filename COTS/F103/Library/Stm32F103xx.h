@@ -15,11 +15,9 @@
 #define GPIOC_BASE_ADDRESS 0x40011000UL
 #define GPIOD_BASE_ADDRESS 0x40011400UL
 #define GPIOE_BASE_ADDRESS 0x4001800UL
-// #define GPIOF_BASE_ADDRESS 0x40011C00UL
-// #define GPIOG_BASE_ADDRESS 0x40012000UL
 
 /************* RCC Registers Definition Structure***************/
-typedef struct
+typedef struct 
 {
     uint32_t CR;       /*   Clock Control Register                 */
     uint32_t CFGR;     /*   Clock Configuration                    */
@@ -41,7 +39,7 @@ RCC_register_t *RCC = (RCC_register_t *)RCC_BASE_ADDRESS;
 
 /************* GPIO Registers Definition Structure ***************/
 
-typedef struct
+typedef struct 
 {
     volatile uint32_t CR[2]; /* Port Configuration Register         */
     volatile uint32_t IDR;   /* Port Intput Data Register           */

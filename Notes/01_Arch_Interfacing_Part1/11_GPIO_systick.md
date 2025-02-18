@@ -3,8 +3,8 @@
 #### Revision On Timer
 
 <p align="center">
-    <img width="80%" height="50%" src="../imgs/systick.JPG">
-  </p>
+    <img width="80%" height="50%" src="../imgs/systick0.JPG">
+</p>
 
 > note: accessing systick register register, zeros it
 
