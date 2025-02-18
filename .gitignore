@@ -9,6 +9,8 @@
 
 # Linker output
 */Debug
+*.launch
+/Debug
 *.ilk
 *.map
 *.exp
