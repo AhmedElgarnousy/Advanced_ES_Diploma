@@ -9,6 +9,7 @@
 
 # Linker output
 */Debug
+/Debug
 *.launch
 /Debug
 *.ilk
