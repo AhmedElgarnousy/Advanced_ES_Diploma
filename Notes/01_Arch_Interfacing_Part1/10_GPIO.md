@@ -109,7 +109,10 @@ note: OutputSpeed_t , OutputType_t only in case mode was Output or alternate fun
       <img width="80%" height="50%" src="../imgs/GPIO7.JPG">
 </p>
 
-
-
 #### Static Code analysis tools
+
 - [pclintplus](https://pclintplus.com/)
+- [misra.org.uk](https://misra.org.uk/)
+- [MISRA-C github](https://github.com/sakura1083841400/MISRA-C/tree/main)
+- [MISRA Coding Standards and the Art of Deviation](https://www.youtube.com/watch?v=Z9aeRpoWZOE)
+- [understanding-compliance-to-the-misra-c-2012-coding-guidelines](https://www.mathworks.com/videos/understanding-compliance-to-the-misra-c-2012-coding-guidelines-121398.html)

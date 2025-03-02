@@ -408,3 +408,5 @@ From F103C8 datasheet to see your interested peripherals
 ##### References
 
 - [STM32F103_Reference Manual Page: 90-122, ch7:Low, medium-, high- and XL-density reset and clock control (RCC)]
+
+- [deepbluembedded.com](https://deepbluembedded.com/stm32-gpio-write-pin-digital-output-lab/)
