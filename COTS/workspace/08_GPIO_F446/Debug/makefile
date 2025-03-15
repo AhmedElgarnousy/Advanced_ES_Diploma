@@ -65,8 +65,8 @@ all: main-build
 main-build: 08_GPIO_F446.elf secondary-outputs
 
 # Tool invocations
-08_GPIO_F446.elf 08_GPIO_F446.map: $(OBJS) $(USER_OBJS) E:\Engineering\CS_Domains\EmbeddedSoftware\02_Advanced_ES_Diploma\COTS\workspace\08_GPIO_F446\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "08_GPIO_F446.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\Engineering\CS_Domains\EmbeddedSoftware\02_Advanced_ES_Diploma\COTS\workspace\08_GPIO_F446\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="08_GPIO_F446.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+08_GPIO_F446.elf 08_GPIO_F446.map: $(OBJS) $(USER_OBJS) E:\Engineering\CS_Domains\Embedded_Software_Engineer\02_Advanced_ES_Diploma\COTS\workspace\08_GPIO_F446\STM32F446RETX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "08_GPIO_F446.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\Engineering\CS_Domains\Embedded_Software_Engineer\02_Advanced_ES_Diploma\COTS\workspace\08_GPIO_F446\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="08_GPIO_F446.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

@@ -7,16 +7,21 @@
 *.obj
 *.elf
 
+
+
 # My added file
 Drivers/
-\Drivers
+Tools/
 Debug/
-\Debug
+*.settings
+*.bin
+language.settings.xml
 *.cproject
 *.mxproject
 *.project
 *.ioc
-*.setting
+*.bin
+*.list
 *.xml
 *.prefs
 *.launch
