@@ -132,6 +132,8 @@ Activatation
 Download stm32 flash loader demonstrator [click here](https://www.st.com/en/development-tools/flasher-stm32.html)
 only for windows
 
+To open **Flash Loader Demonstrator** Tool: C:\Program Files (x86)\STMicroelectronics\Software\Flash Loader Demo\STMFlashLoader Demo.exe
+
 <p align="left">
   <img width="50%" height="50%" src="../imgs/boot33.JPG">
   <img width="50%" height="50%" src="../imgs/boot37.JPG">
