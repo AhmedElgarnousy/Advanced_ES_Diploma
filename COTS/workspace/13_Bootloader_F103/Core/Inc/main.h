@@ -32,6 +32,8 @@ extern "C" {
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#define FLASH_SECTOR2_BASE_ADDRESS 0x08008000UL
+
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -62,6 +64,7 @@ void Bootloader_JumpToUserApp();
 /* Private defines -----------------------------------------------------------*/
 
 /* USER CODE BEGIN Private defines */
+
 
 /* USER CODE END Private defines */
 

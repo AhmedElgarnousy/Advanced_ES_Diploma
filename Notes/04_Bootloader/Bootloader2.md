@@ -77,7 +77,25 @@ our custom bootloader will be stored in sector 0, 1 in the flash, we want this b
   <img width="50%" height="50%" src="../imgs/boot43.JPG">
 </p>
 
-User App is switch as EXTI source and toggle LED in it's handler ISR
+User App is push button act as EXTI source to toggle LED in it's handler ISR
+
+so it's important to test Interrupts in general to test Vector Table Relocation Feature
+
+<p align="center">
+  <img width="50%" height="50%" src="../imgs/boot51.JPG">
+  <img width="50%" height="50%" src="../imgs/boot52.JPG">
+  <img width="50%" height="50%" src="../imgs/boot53.JPG">
+  <img width="50%" height="50%" src="../imgs/boot54.JPG">
+</p>
+
+#### Now we want to flash this code starting from sector2 in flash??
+
+Through Linker script
+
+<p align="center">
+  <img width="50%" height="50%" src="../imgs/boot55.JPG">
+  <img width="50%" height="50%" src="../imgs/boot56.JPG">
+</p>
 
 <p align="center">
   <img width="50%" height="50%" src="../imgs/boot44.JPG">
@@ -87,12 +105,89 @@ in Nucleo-F446
 
 Processor has feature to tell him about new location for vectortable of user application
 
-you have to think in the reset sequence done by processor to implement it by software in jumping to user app function
+###### VectorTable Relocation Feature(VTOR)
+
+- here we have 2 vector tables, one starts @ base of the flash, and one starts @ base od sector2
+- when you reset the microcontroller, the bootloader will run first, if user button is not pressed during power up, the B.L will give control to the user app, this is done by calling the reset handler of user app
+
+###### What if wants to handle any interrupt during user app running?
+
+Remember that ARM-Cortex-M processor thinks that V.T is @ Location 0x00000000 which is bydefault `aliased` to 0x08000000, so when it goes to address 0, it actually reads from 0x8000000,
+but at this address does't contain `vectortable of user app`, this is the vectortable of B.L
+
+This means that once user app starts running , you have to tell the processor to use user app Vectortable instead of BL Vectortable
+
+This can be done by a register called VTOR(Vector Table Relocation Register)
+
+and can be set at reset habdler of the user app
+
+```c
+VTOR = 0x08008000
+```
+
+This ensures that whenever any interrupt triggers, the vectortable at sector2 is the one will be used
+
+So you have to think in the reset sequence done by processor to implement it by software in jumping to user app function
 
 When dubugger uploads code erases flash memory starts from origin address in linker script
 
 so we should upload bootloader first then user app
 
+```c
+// Nucleo-F446
+
+// User Code Begin PD(Private Define)
+#define  FLASH_SECTOR2_BASE_ADDRESS 0x08008000UL
+
+void Bootloader_JumpToUserApp() {
+ /* To jump to user app, go to reset handler of user app */
+
+  /* Pointer to function to hold address of the reset handler of the user app */
+  void (*App_ResetHandler)(void);
+
+  uint32_t ResetHandlerAddress;
+  uint32_t Local_u32MSPVal;
+
+  /* the reset handler of user app is 2nd location at vectortable of user app at sector2 in flash (0x08008000) */
+
+  ResetHandlerAddress = *((volatile uint32_t*)(FLASH_SECTOR2_BASE_ADDRESS + 4));
+
+  App_ResetHandler = (void*)ResetHandlerAddress;
+
+  /* before calling we should initailize MSP for user app by software
+  , Configure MSP of user app by reading value from base address of sector2 , 1st location in VT of user app */
+  Local_u32MSPVal = *(volatile uint32_t*)(FLASH_SECTOR2_BASE_ADDRESS);
+
+  /*Write the user MSP value into MSP register */
+  asm volatile ("MSR MSP, %0"::"r"(Local_u32MSPVal));
+
+  /* now jump to the user app reset handler, now PC update with reset handler of user app and continue in execution */
+  App_ResetHandler();
+}
+```
+
+##### Now relocate vector table at user application, in reset handler of app
+
+_Open_ `startup code file` at `user app project`.
+
 <p align="center">
-  <img width="50%" height="50%" src="../imgs/boot45.JPG">
+  <img width="80%" height="50%" src="../imgs/boot46.JPG">
+  <img width="80%" height="50%" src="../imgs/boot47.JPG">
+  <img width="80%" height="50%" src="../imgs/boot48.JPG">
+  <img width="80%" height="50%" src="../imgs/boot49.JPG">
+  <img width="80%" height="50%" src="../imgs/boot50.JPG">
+</p>
+
+##### Demo Successfull
+
+For Nucleo-F44
+
+<p align="left">
+  <img width="80%" height="50%" src="../imgs/boot45.JPG">
+</p>
+
+For F103
+
+<p align="left">
+  <img width="80%" height="50%" src="../imgs/boot57.JPG">
 </p>

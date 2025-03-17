@@ -67,6 +67,7 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 
+	char HelloUserApp [] = "Hello from user app\r\n";
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -92,13 +93,14 @@ int main(void)
 
   /* USER CODE END 2 */
 
-
-
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
     /* USER CODE END WHILE */
+	  HAL_UART_Transmit(&huart2, (uint8_t)HelloUserApp, sizeof(HelloUserApp), HAL_MAX_DELAY);
+
+	  HAL_Delay(1000);
 
     /* USER CODE BEGIN 3 */
   }
@@ -217,6 +219,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
+
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */

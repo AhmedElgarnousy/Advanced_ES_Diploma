@@ -69,7 +69,7 @@ static void MX_USART1_UART_Init(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	char HelloBootloader [] = "Hello Bootloader\r\n";
+	char HelloBootloader [] = "Hello Bootloader in F103\r\n";
 
   /* USER CODE END 1 */
 
@@ -111,6 +111,9 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+		HAL_UART_Transmit(&huart1, (uint8_t*)HelloBootloader, sizeof(HelloBootloader), HAL_MAX_DELAY);
+
+		HAL_Delay(1000);
 
     /* USER CODE BEGIN 3 */
   }
@@ -240,7 +243,31 @@ static void MX_GPIO_Init(void)
 
 void Bootloader_UartReadData(){}
 
-void Bootloader_JumpToUserApp(){}
+void Bootloader_JumpToUserApp(){
+	 /* To jump to user app, go to reset handler of user app */
+
+	  /* Pointer to function to hold address of the reset handler of the user app */
+	  void (*App_ResetHandler)(void);
+
+	  uint32_t ResetHandlerAddress;
+	  uint32_t Local_u32MSPVal;
+
+	  /* the reset handler of user app is 2nd location at vectortable of user app at sector2 in flash (0x08008000) */
+
+	  ResetHandlerAddress = *((volatile uint32_t*)(FLASH_SECTOR2_BASE_ADDRESS + 4));
+
+	  App_ResetHandler = (void*)ResetHandlerAddress;
+
+	  /* before calling we should initailize MSP for user app by software
+	  , Configure MSP of user app by reading value from base address of sector2 , 1st location in VT of user app */
+	  Local_u32MSPVal = *(volatile uint32_t*)(FLASH_SECTOR2_BASE_ADDRESS);
+
+	  /*Write the user MSP value into MSP register */
+	  asm volatile ("MSR MSP, %0"::"r"(Local_u32MSPVal));
+
+	  /* now jump to the user app reset handler, now PC update with reset handler of user app and continue in execution */
+	  App_ResetHandler();
+}
 
 /* USER CODE END 4 */
 
