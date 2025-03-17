@@ -6,7 +6,9 @@
 
 Explanation of mapping of different memories and peripheral registers in the `processor addressable region`, depends on size of address bus
 
-![mem_map](../imgs/mm1.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/mm1.JPG">
+</p>
 
 - system buses is set of a bus set(address, data, control)
 - This address bus `32-bits`, so it can access up to `4G Locations `(2^32^), starting from `0x0` to `0xffffffff`
@@ -35,11 +37,15 @@ so this RAM location is updated.
 - we know in ARM Architecture processor sees all memories as virtually as one memory system(like von-neuuman)
 - and this system memory is 4GB and divided into 7 fixed regions
 
-![mem_map45](../imgs/mm2.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/mm2.JPG">
+</p>
 
-- as shown in arm-cortex-m3/4 generic user guide document
+- As shown in arm-cortex-m3/4 generic user guide document
 
-![mem_map](../imgs/mm3.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/mm3.JPG">
+</p>
 
 ###### Let's discover these regions
 
@@ -64,7 +70,9 @@ But this will be slow in accessing.
 - arm provide a peripheral called Flexiable Memory control(FMC) that connect with the external memory through parallel communication.
 - and mapping the address range of the external flash to code region address range
 - for example from 0 to 1023 in ext flash to 1024 to 2047 in code region
-  ![mem_map](../imgs/mm4.JPG)
+  <p align="center">
+  <img width="75%" height="50%" src="../imgs/mm4.JPG">
+</p>
 
 - processor by default feteches code instructions and permenant data & vectortable information from this region,
 - directly after reset.
@@ -100,7 +108,9 @@ But this will be slow in accessing.
    In traditional bit manipulation, modifying a single bit often involves a read-modify-write cycle. This can be problematic in concurrent or interrupt-driven environments, as another process might modify the same bit between the read and write operations. Bit-banding helps avoid this issue by providing direct access to individual bits without the need for read-modify-write cycles.
 
 - for much speed accessing for bits, faster than read-modify-write of bit math like `set_bit()`
-  ![mem_map](../imgs/mm5.JPG)
+  <p align="center">
+  <img width="75%" height="50%" src="../imgs/mm5.JPG">
+</p>
 
 - why we need this speed of accessing?
   - Bit Banging: reading stream of bits and out them on MC pins
@@ -108,7 +118,9 @@ But this will be slow in accessing.
 [ARM developer- About-bit-banding](https://developer.arm.com/documentation/100166/0001/Programmers-Model/Bit-banding/About-bit-banding)
 
 - memory is byte addressable
-  ![mem_map](../imgs/mm6.JPG)
+  <p align="center">
+  <img width="55%" height="50%" src="../imgs/mm6.JPG">
+</p>
 
 - bit banding is optional to MC vendor:
 - Bluepil has NO bit banding region
@@ -152,11 +164,13 @@ also if we want to extend MC internal RAM size , add external RAM and connect to
 - to access peripheral inside processor you have to write a inline assembly
 - this regions enables us to access local CPU peripheral with C like other peripherals outside CPU
 
-  ![mem_map](../imgs/mm7.JPG)
+  <p align="center">
+  <img width="85%" height="50%" src="../imgs/mm7.JPG">
+</p>
 
 ---
 
-## Bus Protocols and Bus interfaces
+### Bus Protocols and Bus interfaces
 
 ARM provides (AMBA): Advanced MC Bus Architecture standard for on chip cimmunication
 
@@ -178,23 +192,33 @@ on chip means comm. between processor and memory and peripherals.
 
 ##### Processor outs 4 bus interfaces
 
-![mem_map](../imgs/mm12.JPG)
-
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/mm12.JPG">
+</p>
 - 2 Bus interface for the Code region
 
-  - `ICODE`: used for instruction fetches, vector table read
-  - `DCODE`: for the data access in the code region(like const)
-  - SO fetching Data and instruction can be done simultanously
+- `ICODE`: used for instruction fetches, vector table read
+- `DCODE`: for the data access in the code region(like const)
+- SO fetching Data and instruction can be done simultanously
 
 - S-Bus: various on chip peripherals and memories
 - PPB: Private Peripheral Bus for core peripherals
-  ![mem_map](../imgs/mm13.JPG)
+  <p align="center">
+  <img width="75%" height="50%" src="../imgs/mm13.JPG">
+</p>
 
-STM32F103C8T6
-![mem_map](../imgs/mm8.JPG)
-![mem_map](../imgs/mm9.JPG)
-STM32F446RE
-![mem_map](../imgs/mm10.JPG)
-![mem_map](../imgs/mm11.JPG)
+#### STM32F103C8T6
+
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/mm8.JPG">
+  <img width="75%" height="50%" src="../imgs/mm9.JPG">
+</p>
+
+##### STM32F446RE
+
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/mm10.JPG">
+  <img width="75%" height="50%" src="../imgs/mm11.JPG">
+</p>
 
 ---

@@ -1,7 +1,10 @@
 ### Processor Features (Cortex-M4)
 
 Reference: from Cortex-M4 TRM document
-![modes](../imgs/pf1.JPG)
+
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/pf1.JPG">
+</p>
 
 ##### processor vs processor core
 
@@ -46,8 +49,10 @@ Reference: from Cortex-M4 TRM document
 - Use Case
   - Thread mode: Running user-level or background tasks.
   - Handler mode: Handling critical, real-time(RTOS), or fault-related tasks.
-    ![modes](../imgs/pf2.JPG)
-    ![modes](../imgs/pf3.JPG)
+  <p align="center">
+    <img width="75%" height="50%" src="../imgs/pf2.JPG">
+    <img width="75%" height="50%" src="../imgs/pf3.JPG">
+  </p>
 
 #### `2)` Access Level
 
@@ -68,8 +73,10 @@ access levels are used to `control access` to `system resources` and `enhance se
 
 ###### Diagrams illustrate Handler(Privileged) and Thread(Privileged/Non-Privileged) Modes
 
-![modes](../imgs/pf5.png)
-![modes](../imgs/pf4.png)
+<p align="center">
+  <img width="65%" height="50%" src="../imgs/pf5.png">
+  <img width="55%" height="50%" src="../imgs/pf4.png">
+</p>
 
 ##### Usage of these Features
 
@@ -79,7 +86,9 @@ access levels are used to `control access` to `system resources` and `enhance se
 
 #### `3)` Core Registers
 
-![CORE_REGS](../imgs/PF7.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/pf7.JPG">
+</p>
 
 - `RO` -> `R12` (Total 13)
   - `32-bits high-speed storage` inside the `processor`.
@@ -114,8 +123,10 @@ access levels are used to `control access` to `system resources` and `enhance se
     - Execution Program Status Register (`EPSR`)
 - These registers can be `accessed` `individually` or `in combination as the Program Status Register (PSR)`.
 
-![CORE_REGS](../imgs/pf8.JPG)
-![CORE_REGS](../imgs/pf9.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/pf8.JPG">
+  <img width="75%" height="50%" src="../imgs/pf9.JPG">
+</p>
 
 ###### PSR and APSR
 

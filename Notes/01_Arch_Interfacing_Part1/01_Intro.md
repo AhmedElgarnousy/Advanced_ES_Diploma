@@ -1,12 +1,12 @@
 ### Introduction
 
-session: intro 1
+Session: Intro 1
 
 - ==Embedded SW job is to make machine smarter==
 
   - vehicles, watches, washers
 
-- more domains IOT, Embedded linux
+- More domains IOT, Embedded linux
 
 - Importance of details and deep understanding
   - Different MCUs, Architectures, more projects
@@ -24,7 +24,7 @@ session: intro 1
 
 ---
 
-session: intro 2
+Session: intro 2
 
 ###### Hardware Components
 
@@ -51,8 +51,10 @@ session: intro 2
 - Like a Oscillicscope without screen
 - Usage - PWM Measuring (Freq, Duty Cycle, Period time) - Comm. Protocols Decoding (Frame analysis)
 
-`4)` Small Bread Board
+`4)` Small Breadboard
 `5)` **Tiny RTC Module**
+
+DS1307
 
 - Real time Clock: Sec:Min:Hr, Date
 - has 32 kBit EEPROM
@@ -60,18 +62,38 @@ session: intro 2
 
 `6)` **CAN Transiver**
 
+N65HVD230 CAN bus transceiver module
+
 - Convert Frame CAN Controller out from MC to voltage CAN Bus Level
+
+<p align="center">
+  <img width="25%" height="50%" src="../imgs/hardware1.jpg">
+  <img width="20%" height="50%" src="../imgs/hardware2.jpg">
+  <img width="15%" height="50%" src="../imgs/hardware3.jpg">
+  <img width="15%" height="50%" src="../imgs/hardware5.jpg">
+  <img width="20%" height="50%" src="../imgs/hardware4.jpg">
+</p>
 
 ---
 
 #### Content Details
 
--
+- [Introduction](#)
+- [Interfacing Part1](#)
+- [VCS and Software Integration](#)
+- [Toolchain](#)
+- [Bootloader](#)
+- [RTOS](#)
+- [Interfacing part2](#)
+- [Classical AUTOSAR](#)
+- [Mega Projects](#)
+
+---
 
 #### Motivation To Learn ARM Coterx-M Processors
 
 `1)` Battery Powered Devices: health monitoring, fitness tracking, Meters, etc
-`2)` Automoive Applicatios:
+`2)` Automoive Applications:
 `3)` IOT Applications
 `4)` Mobile & Home Appliances
 `5)` Home / Building Automotive
@@ -79,12 +101,15 @@ session: intro 2
 `7)` PC & Mobile Accessories
 `8)` Test & Measurement Devices
 
-##### Products as Examples
+#### Products as Examples
 
 ###### Ex1: Smart Watch (fitbit flex)
 
 used for fitness tracking
-![intro](../imgs/intro1.JPG)
+
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/intro1.JPG">
+</p>
 
 **MC** : `STM32L151C6`
 **processor**: ARM Cortex M3
@@ -96,7 +121,9 @@ used for fitness tracking
 
 ###### Ex2: TomTom GPS MultiSport Fitness watch
 
-![intro](../imgs/intro2.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/intro2.JPG">
+</p>
 
 **MC** : SAMSx (ATMEL Smart ARM Cortex M7)
 **processor**: ARM Cortex M7
@@ -187,16 +214,19 @@ really it's not real competior, but it's best sell because its eductional board
 `4)` check the required peripehrals
 `5)` check the memories
 
-![intro](../imgs/intro3.JPG)
-
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/intro3.JPG">
+</p>
 - LWIP: Light Weight IP Stack
 - Chinese board is low quality(easy to burn) compared to ST
 
 ##### Famous STM Development board of ST are Discovery, Nucleo
 
-![intro](../imgs/intro5.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/intro5.JPG">
+</p>
 
-##### Nucleo-64
+#### Nucleo-64
 
 64 for no. of pins
 Almost provide all peripherals F4, F7
@@ -209,7 +239,7 @@ Almost provide all peripherals F4, F7
 
 ![intro](../imgs/intro4.JPG)
 
-- note: Raspberry pi like a small motherBoard PC, board itself obtains processor + all external peripheral outside it.
+- **Note**: Raspberry pi like a small motherBoard PC, board itself obtains processor + all external peripheral outside it.
 
 - ESP considered to arduino educational boards
 
@@ -248,13 +278,19 @@ for STM32F446RE
 
 #### Microcontroller Architectures
 
-![intro](../imgs/intro6.JPG)
-![intro](../imgs/intro7.JPG)
-![intro](../imgs/intro8.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/intro6.JPG">
+  <img width="75%" height="50%" src="../imgs/intro7.JPG">
+  <img width="75%" height="50%" src="../imgs/intro8.JPG">
+</p>
 
-#### ATmega32 vs STM32F103
+---
 
-![intro](../imgs/intro9.JPG)
+##### ATmega32 vs STM32F103
+
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/intro9.JPG">
+</p>
 
 ---
 
@@ -361,4 +397,4 @@ Arm purchased Falanx Microsystems A/S, a spin-off of a research project from the
 `2012)` : Real Windows on ARM
 `2020)` : 2020 NIVIDIA Acquire ARM by 40 billions $
 
-> Scecret of success always intersted in power, speed, cost
+> Secret of success always intersted in ==power==, ==speed==, ==cost==

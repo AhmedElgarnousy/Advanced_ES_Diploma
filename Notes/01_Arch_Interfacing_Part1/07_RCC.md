@@ -12,7 +12,6 @@ These pulses act as a timing reference, synchronizing the operation of the syste
 ###### why do we need the clock?
 
 <p align="center">
-
   <p> Inituatively like the heart and blood for humens </p>
   <img width="40%" height="30%" src="../imgs/RCC14.JPG">
 </p>

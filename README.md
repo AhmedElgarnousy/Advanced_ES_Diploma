@@ -13,11 +13,12 @@
 - [Bootloader](#bootloader)
 - [RTOS](#rtos)
 - [Interfacing part2](#interfacing-part2)
+- [Classical AUTOSAR](#classical-autosar)
 - [Mega Projects](#mega-projects)
 
 ### Introduction
 
-What and Why ARM
+Content Overview, What and Why ARM, Hardware Components, Motivation To Learn ARM Coterx-M Processors, ARM History
 
 ### Interfacing Part1
 
@@ -50,6 +51,10 @@ software Integration using Git
 - CAN
 - Timers
 - Low Power Modes
+
+### Classical AUTOSAR
+
+com stack
 
 ### Mega Projects
 

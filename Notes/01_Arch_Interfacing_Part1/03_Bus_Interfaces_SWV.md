@@ -60,7 +60,9 @@ in flash in this easy way through *Astrisk method
 
 - Additional Resources: [array vs pointers](https://www.naukri.com/code360/library/difference-between-arrays-and-pointers)
 
-![Cortex-M4](../imgs/m4-blockDiagram.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/m4-blockDiagram.JPG">
+</p>
 
 ###### From TRM processor `Cortex-M4` Document -> Interfaces -> Bus Interfaces
 
@@ -99,26 +101,36 @@ in flash in this easy way through *Astrisk method
     bit-band accesses, and pipelined instruction fetches.
 
 - **Important Notes For 3 external AHB-Lite Bus interfaces**:
-  ![bi_notes](../imgs/bi_notes.JPG)
+  <p align="center">
+    <img width="75%" height="50%" src="../imgs/bi_notes.JPG">
+  </p>
 
 ##### Questions: True / False for STM32F446 based Cortex-M4
 
-![bi_notes](../imgs/bi_questions.JPG)
+  <p align="center">
+    <img width="75%" height="50%" src="../imgs/bi_questions.JPG">
+  </p>
 
 `1)` Q1: From STM32F446 TRM
 
 - means Can't W/R to flash but can control flash interface by S-BUS
-  ![bi_notes](../imgs/bus_interface2.JPG)
+  <p align="center">
+    <img width="75%" height="50%" src="../imgs/bus_interface2.JPG">
+  </p>
 
 `2)`
 
-![mem_map](../imgs/mm10.JPG)
+  <p align="center">
+    <img width="75%" height="50%" src="../imgs/mm10.JPG">
+  </p>
 
 ---
 
 ##### About Nucleo-64 Board
 
-![mem_map](../imgs/bus_interface3.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/bus_interface3.JPG">
+</p>
 
 - virtual COM supports(USB to TLL)
 
@@ -128,7 +140,9 @@ based on Eclipse, contains cubeMX inside it, also CubeMX exists as standalone to
 
 - IDE: is a Software program used to develop, compile, link, debug your code
 
-![mem_map](../imgs/bus_interface4.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/bus_interface4.JPG">
+</p>
 
 - Installition:
 
@@ -223,11 +237,15 @@ __attribute__((weak)) int _write(int file, char *ptr, int len)
 - for M0 based use semihosting principle
 - printf work over SWO PIN (Serial Wire Output) of `SWD interface`
 
-![bus_interface](../imgs/bus_interface5.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/bus_interface5.JPG">
+</p>
 
 Through this debug circuit interface , the board communicates with P.C like writing commands to internal flash and processor `run`, `stop`, .., via USB.
 
-![bus_interface](../imgs/bus_interface6.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/bus_interface6.JPG">
+</p>
 
 - ITM unit supports printf style debugging to trace operating system & application events , generates diagnostics system information.
 - ITM unit connects to Trace Port Interface Unit(TPIU) to Trace Port.
@@ -329,12 +347,16 @@ The Serial Wire Viewer is an advanced feature for non-intrusive debugging on ARM
 
 ---
 
-![bus_interface](../imgs/bus_interface7.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/bus_interface7.JPG">
+</p>
 
 - so all you need is to write your printf data into this buffer, then the message comes out SWO PIN, then you capture it
 - Not all IDEs have this feature of captueing the previous data, CubeIDE, TrueStudio support this functionality
 
-![bus_interface](../imgs/bus_interface8.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/bus_interface8.JPG">
+</p>
 
 ```c
 _write()
@@ -342,7 +364,6 @@ _write()
 is a lower level call, implemented in syscall.c
 it used to point on the screen using OS,
 we can remap this printing of the ITM  on LCD for example, which when written, it writes in its buffer, which whill then output on the SWO pin to STLink circuit to PC to IDE capturing to prints on console.
-
 */
 ```
 

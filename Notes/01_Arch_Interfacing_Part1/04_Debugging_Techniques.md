@@ -4,33 +4,49 @@
 
 #### Embedded Code Debugging Techiques
 
-![embedded_techiques](../imgs/et1.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/et1.JPG">
+</p>
 
 ##### Single stepping execution
 
-![embedded_techiques](../imgs/et2.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/et2.JPG">
+</p>
 
 ##### Disassembly & Register Windows
 
-![embedded_techiques](../imgs/et3.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/et3.JPG">
+</p>
 
 ##### Breakpoints
 
-![embedded_techiques](../imgs/et4.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/et4.JPG">
+</p>
 
 ##### Expression & Variable window
 
-![embedded_techiques](../imgs/et5.JPG)
-![embedded_techiques](../imgs/et6.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/et5.JPG">
+  <img width="75%" height="50%" src="../imgs/et6.JPG">
+</p>
 
 ##### Call Stack & Fault Analyzer
 
-![embedded_techiques](../imgs/et7.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/et7.JPG">
+</p>
 
 ##### Data Watch Points
 
-![embedded_techiques](../imgs/et8.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/et8.JPG">
+</p>
 
 ##### SFR Window
 
-![embedded_techiques](../imgs/et9.JPG)
+<p align="center">
+  <img width="75%" height="50%" src="../imgs/et9.JPG">
+</p>
