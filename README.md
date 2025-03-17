@@ -1,6 +1,6 @@
 #### Advanced_ES_Diploma
 
-[Embedded-Systems](https://img.shields.io/badge/embedded-systems-blue)
+[embedded-systems-blue](https://img.shields.io/badge/embedded-systems-blue)
 
 ---
 
