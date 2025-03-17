@@ -18,7 +18,7 @@
 
 ### Introduction
 
-Content Overview, What and Why ARM, Hardware Components, Motivation To Learn ARM Coterx-M Processors, ARM History
+Content Overview, What and Why ARM, Hardware Components, Motivation To Learn ARM Coterx-M Processors, ARM History, Tools and Env Setup
 
 ### Interfacing Part1
 
@@ -34,27 +34,44 @@ software Integration using Git
 ### Toolchain
 
 - Building Makefile, Startup file , Linker Script from scratch
+- Communication with debugger using server client communication.
 
 ### Bootloader
 
 - Flashing Techniques
 - ST Native Bootloader Demo
 - Implementing custom bootloader from scratch
+  - Jumping to user app.
+  - Read commands.
+  - Implementing read, write, erase commands
+  - Enhancement with advanced services.
 
 ### RTOS
 
-- implementing our own schedular from scratch
-- FreeRTOS
+- ARM System Level Exceptions
+- Advanced Schedular Implementation using ARM Features with context switching
+- FreeRTOS Porting and simple task training
+- Segger J-link tool for time tracing & monitoring
+- FreeRTOS objects Trainings
+  1. Task States, idle Task, Notification Mechanism, Hook Function
+  2. Memory Management
+  3. Task Priority
+  4. Synchronization using semaphore & Queue
+  5. communication management using queues
 
 ### Interfacing part2
 
 - CAN
 - Timers
 - Low Power Modes
+- Lin
 
 ### Classical AUTOSAR
 
-com stack
+- Introduction
+- Memory Stack
+- COM Stack
+- Implement PORT Driver & GPIO Driver According to AUTOSAR Specs
 
 ### Mega Projects
 
