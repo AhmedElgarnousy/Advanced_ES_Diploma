@@ -190,4 +190,5 @@ For F103
 
 <p align="left">
   <img width="80%" height="50%" src="../imgs/boot57.JPG">
+  <img width="80%" height="50%" src="../imgs/boot58.jpeg">
 </p>
