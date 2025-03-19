@@ -36,7 +36,7 @@ but we limited to FMC Block Memory Region
 
 #### Host-Bootloader Communication
 
-Host may be machine, or another Microcontroller
+Host may be PC, or another Microcontroller
 
 <p align="center">
   <img width="50%" height="50%" src="../imgs/boot42.JPG">
