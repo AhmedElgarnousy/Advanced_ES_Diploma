@@ -113,7 +113,7 @@ used to read the protection status of various sectors of memory
 <img width="80%" height="50%" src="../imgs/boot67.JPG">
 </p>
 
-- Packet Size: 6B
+- Packet Size: 6`B`
 - Length to follow(int): 5
 
 Rely: ALL sectors status
@@ -133,7 +133,7 @@ Rely: ALL sectors status
 This disable all active protectons on all the sectors (resumes to default state)
 
 <p align="center">
-<img width="80%" height="50%" src="../imgs/boot68.JPG">
+<img width="50%" height="50%" src="../imgs/boot68.JPG">
 </p>
 
 ---
@@ -143,5 +143,5 @@ This disable all active protectons on all the sectors (resumes to default state)
 used to get the manufacturing Chip ID of the Microcontroller
 
 <p align="center">
-<img width="80%" height="50%" src="../imgs/boot69.JPG">
+<img width="60%" height="50%" src="../imgs/boot69.JPG">
 </p>

@@ -2,32 +2,31 @@
 
 custom Bootloader 1st step
 
-#### Where to place our bootloader & code in the memory
+##### Where to place our bootloader & code in the memory ??
 
 <p align="center">
   <img width="50%" height="50%" src="../imgs/boot40.JPG">
 </p>
 
-we know that we have ROM of 30KB, where ST'S Bootloader is stored
-we hoped to use it but we can't remove that because it READ only and not access from vendor.
-
+we know that we have ROM of 30`KB`, where ST's Bootloader is stored
+we hoped to use it but we can't remove that because it Read-only and not access from vendor.
 instead of consume our flash, and it will erase after using debugger
 
 so we use the flash memory itself to store our bootloader, sector 0, sector 1
 
-which is 1st 32 KB of the flash memory, then sector2 > sector 7 for the application code
+which is 1st 32`KB` of the flash memory, then sector2 `->` sector7 for the application code
 
-###### Flash Memory Organization
+##### Flash Memory Organization
 
 <p align="center">
-  <img width="50%" height="50%" src="../imgs/boot39.JPG">
+  <img width="60%" height="50%" src="../imgs/boot39.JPG">
 </p>
 
 <p align="center">
-  <img width="50%" height="50%" src="../imgs/boot41.JPG">
+  <img width="60%" height="50%" src="../imgs/boot41.JPG">
 </p>
 
-Note: We can also use external flash to store our Custom Bootloader, as we have Flexible memory controller (FMC) Peripheral In Nucleo64 board to map its addresses to internal processor accessable addresses
+Note: We can also use external flash to store our Custom Bootloader, as we have flexible memory controller (FMC) peripheral In Nucleo64 board to map its addresses to internal processor accessable addresses
 which is parallel communication for high speed
 
 but we limited to FMC Block Memory Region
@@ -39,19 +38,19 @@ but we limited to FMC Block Memory Region
 Host may be PC, or another Microcontroller
 
 <p align="center">
-  <img width="50%" height="50%" src="../imgs/boot42.JPG">
+  <img width="60%" height="50%" src="../imgs/boot42.JPG">
 </p>
 
 ##### Our Communication Architecture
 
-`1)` When your reset your MC, it will make some initialisations, like clock, communicatio9n, then it'll wait for data from host on communication bus
+`1)` When your reset your MC, it will make some initializations, like clock, communication, then it'll wait for data from host on communication bus
 
-`2)` when host sends command packet , the bootloader will receive it, decode it, checks for data validation(CRC) of the recieved packet
+`2)` when host sends command packet , the bootloader will receive it, decode it, checks for data validation(CRC) of the received packet
 
-`3)` If data is good, it will send ACK, if it fails it will send NACK
+`3)` If data is good, it will send _ACK_, if it fails it will send _NACK_
 
-`4)` I f ACK is sent, it will be followed by length to follow
-This is total 2B: 1B for ACK, 1B for length
+`4)` If ACK is sent, it will be followed by length to follow
+This is total 2`Bytes`: 1`Byte` for ACK, 1`Byte` for length
 The length is #of bytes the bootloader will send next as reply
 
 `5)` The bootloader sends reply actually
@@ -82,19 +81,19 @@ User App is push button act as EXTI source to toggle LED in it's handler ISR
 so it's important to test Interrupts in general to test Vector Table Relocation Feature
 
 <p align="center">
-  <img width="50%" height="50%" src="../imgs/boot51.JPG">
-  <img width="50%" height="50%" src="../imgs/boot52.JPG">
-  <img width="50%" height="50%" src="../imgs/boot53.JPG">
-  <img width="50%" height="50%" src="../imgs/boot54.JPG">
+  <img width="90%" height="50%" src="../imgs/boot51.JPG">
+  <img width="90%" height="50%" src="../imgs/boot52.JPG">
+  <img width="90%" height="50%" src="../imgs/boot53.JPG">
+  <img width="90%" height="50%" src="../imgs/boot54.JPG">
 </p>
 
-#### Now we want to flash this code starting from sector2 in flash??
+#### Now how do we can flash this code starting from sector2 in flash??
 
 Through Linker script
 
 <p align="center">
-  <img width="50%" height="50%" src="../imgs/boot55.JPG">
-  <img width="50%" height="50%" src="../imgs/boot56.JPG">
+  <img width="90%" height="50%" src="../imgs/boot55.JPG">
+  <img width="90%" height="50%" src="../imgs/boot56.JPG">
 </p>
 
 <p align="center">
@@ -122,7 +121,7 @@ This can be done by a register called VTOR(Vector Table Relocation Register)
 and can be set at reset habdler of the user app
 
 ```c
-VTOR = 0x08008000
+VTOR = 0x08008000;
 ```
 
 This ensures that whenever any interrupt triggers, the vectortable at sector2 is the one will be used
@@ -171,24 +170,24 @@ void Bootloader_JumpToUserApp() {
 _Open_ `startup code file` at `user app project`.
 
 <p align="center">
-  <img width="80%" height="50%" src="../imgs/boot46.JPG">
-  <img width="80%" height="50%" src="../imgs/boot47.JPG">
-  <img width="80%" height="50%" src="../imgs/boot48.JPG">
-  <img width="80%" height="50%" src="../imgs/boot49.JPG">
-  <img width="80%" height="50%" src="../imgs/boot50.JPG">
+  <img width="90%" height="50%" src="../imgs/boot46.JPG">
+  <img width="90%" height="50%" src="../imgs/boot47.JPG">
+  <img width="90%" height="50%" src="../imgs/boot48.JPG">
+  <img width="90%" height="50%" src="../imgs/boot49.JPG">
+  <img width="90%" height="50%" src="../imgs/boot50.JPG">
 </p>
 
 ##### Demo Successfull
 
-For Nucleo-F44
+**For Nucleo-F44**
 
-<p align="left">
+<p align="center">
   <img width="80%" height="50%" src="../imgs/boot45.JPG">
 </p>
 
-For F103
+**For F103**
 
-<p align="left">
-  <img width="80%" height="50%" src="../imgs/boot57.JPG">
-  <img width="80%" height="50%" src="../imgs/boot58.jpeg">
+<p align="center">
+  <img width="50%" height="50%" src="../imgs/boot57.JPG">
+  <img width="50%" height="50%" src="../imgs/boot58.jpeg">
 </p>
