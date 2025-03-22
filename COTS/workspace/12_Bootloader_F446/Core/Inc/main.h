@@ -47,6 +47,7 @@ extern "C" {
 /* Exported macro ------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
 
+#define FLASH_SECTOR2_BASE_ADDRESS 0x08008000UL
 /* USER CODE END EM */
 
 /* Exported functions prototypes ---------------------------------------------*/

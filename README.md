@@ -6,6 +6,10 @@
 
 #### Table Of Content
 
+<p align="center">
+  <img align="right" width="25%" height="50%" src="Notes/imgs/embedded-systems.png">
+</p>
+
 - [Introduction](#introduction)
 - [Interfacing Part1](#interfacing-part1)
 - [VCS and Software Integration](#vcs-and-software-integration)
@@ -25,7 +29,7 @@ Content Overview, What and Why ARM, Hardware Components, Motivation To Learn ARM
 - ARM Architecture(AMPA, Core Registers, Access Levels(Priviledge), Mode(Thread, Handler))
 - Inline Assembly
 - Stack (AAPCS)
-- Debugging techniques
+- Debugging Techniques
 
 ### VCS and Software Integration
 

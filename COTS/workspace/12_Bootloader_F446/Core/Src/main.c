@@ -23,6 +23,9 @@
 
 /* USER CODE BEGIN Includes */
 
+#include<string.h> /*memset(), */
+#include<bootloader.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -267,7 +270,42 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-void Bootloader_UartReadData(){ }
+void Bootloader_UartReadData()
+{
+	/*This function used to read commands from host */
+
+	uint8_t Local_u8CommandPacket[255] = {0};
+
+	while(1)
+	{
+		/*clear the command packet every iteration */
+		memset(Local_u8CommandPacket,0,255); /*INSTEAD of for loop to clear the array */
+
+		/*1st step: read the 1st byte which includes the "Length to follow" field of the command */
+		HAL_UART_Receive(&huart2, Local_u8CommandPacket, 1, HAL_MAX_DELAY);
+
+		/*2nd step: read the rest of the command, it's size is the previously byte value */
+		HAL_UART_Receive(&huart2, &Local_u8CommandPacket[1], Local_u8CommandPacket[0], HAL_MAX_DELAY);
+
+		/*3rd step: check the command code, then handle the command */
+		switch(Local_u8CommandPacket[1]) // second item the command code in all commands frame
+		{
+			case BL_GET_VER: 				BL_voidHandleGetVerCmd(Local_u8CommandPacket);				break;
+			case BL_GET_HELP: 				BL_voidHandleGetHelpCmd(Local_u8CommandPacket);				break;
+			case BL_GET_CID: 				BL_voidHandleGetCIDCmd(Local_u8CommandPacket);				break;
+			case BL_GET_RDP_STATUS: 		BL_voidHandleGetRDPStatusCmd(Local_u8CommandPacket);		break;
+			case BL_GO_TO_ADDR: 			BL_voidHandleGoToAddrCmd(Local_u8CommandPacket);			break;
+			case BL_FLASH_ERASE: 			BL_voidHandleFlashEraseCmd(Local_u8CommandPacket);			break;
+			case BL_MEM_WRITE: 				BL_voidHandleMemWriteCmd(Local_u8CommandPacket);			break;
+			case BL_EN_RW_PROTECT: 			BL_voidHandleEnRWProtectCmd(Local_u8CommandPacket);			break;
+			case BL_MEM_READ: 				BL_voidHandleMemReadCmd(Local_u8CommandPacket);				break;
+			case BL_READ_SECTOR_STATUS: 	BL_voidHandleReadSectorStatusCmd(Local_u8CommandPacket);	break;
+			case BL_OTP_READ: 				BL_voidHandleOTPReadCmd(Local_u8CommandPacket);				break;
+			case BL_DIS_RW_PROTECT: 		BL_voidHandleDisRWProtectCmd(Local_u8CommandPacket);	 	break;
+			default: 						/* INVALID CMD FROM HOST */ break;
+		}
+	}
+}
 
 /* to jump to user app, go to reset handler of user app */
 void Bootloader_JumpToUserApp() {
