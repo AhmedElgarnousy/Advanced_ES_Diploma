@@ -1,8 +1,12 @@
-import serial
+import serial # Pyserial
+# Built-in Modules
 import struct
 import os
 import sys
 import glob
+
+
+# print (serial.__version__)
 
 Flash_HAL_OK                                        = 0x00
 Flash_HAL_ERROR                                     = 0x01

@@ -144,7 +144,7 @@ Reply: ALL sectors status
 This disable ALL active protections on all the sectors (resumes to default state)
 
 <p align="center">
-<img width="50%" height="50%" src="../imgs/boot68.JPG">
+	<img width="50%" height="50%" src="../imgs/boot68.JPG">
 </p>
 
 ---
@@ -294,6 +294,16 @@ void BL_voidHandleGetVerCmd(uint8_t * copy_pu8CmdPacket)
 		voidSendNack();
 	}
 }
-}
-
 ```
+
+---
+
+_Test_ **BL_GET_VERSION Command** on F103.
+
+- Upload Bootloader App, then User App
+- Then Enter Boot mode by pressing on push button after reset
+- Then target waits to receive data from host(Python Script)
+
+<p align="center">
+	<img width="90%" height="50%" src="../imgs/boot71.JPG">
+</p>
