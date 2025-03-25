@@ -677,7 +677,7 @@ def read_bootloader_reply(command_code):
             
             
 
-#----------------------------- Ask Menu implementation----------------------------------------
+#----------------------------- Ask Menu implementation ---------------------------------------
 
 
 name = input("Enter the Port Name of your device(Ex: COM3):")

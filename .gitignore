@@ -10,8 +10,12 @@
 
 # closed source
 # STM32_Bootloader_Tool.py
-
 *.py
+
+# Labs\04_Bootloader\STM32F103C8T6_Bootloader\Host_App\ Does.t effect
+Labs/04_Bootloader/STM32F103C8T6_Bootloader/Host_App/
+
+
 
 
 # My added file
