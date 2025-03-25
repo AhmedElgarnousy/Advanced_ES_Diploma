@@ -687,15 +687,12 @@ if(ret < 0):
     decode_menu_command_code(0)
     
 
-    
-  
 while True:
     print("\n +==========================================+")
-    print(" |               Menu                       |")
-    print(" |         STM32F4 BootLoader v1            |")
-    print(" +==========================================+")
+    print(" |               Menu                         |")
+    print(" |         STM32 Host BootLoader App v1       |")
+    print(" +============================================+")
 
-  
     
     print("\n   Which BL command do you want to send ??\n")
     print("   BL_GET_VER                            --> 1")

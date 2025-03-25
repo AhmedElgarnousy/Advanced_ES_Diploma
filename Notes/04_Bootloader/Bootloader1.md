@@ -1,8 +1,24 @@
-### What is the Bootloader
+### What is the Embeddded Bootloader (Automotive ECU Bootloader)
 
 <img width="10%" height="10%" align="left" src="../imgs/bootloader-icon.png">
 
-Small piece of code, stored in the MCU flash or ROM, to act as an application loader as well as a mechanism to update the applications wherever required.
+Bootloader “bootstrap loader” or Boot Program.
+
+Small piece of code, stored in the MCU flash or ROM, to act as an application loader as well as a mechanism to update the applications wherever required(receive firmware updates)
+
+These updates may include bug fixes, security patches, or new features. The update process can happen via OTA or on-site.
+(e.g., at a service center) and involves several steps:
+
+Receiving the new software (via UDS or other protocols).
+Verifying the new firmware using cryptographic signatures.
+Storing the new software in flash memory.
+Restarting the ECU to load the updated firmware.
+
+#### Why do we use Bootloader?
+
+- Firmware Update
+- Security
+- Etc
 
 ---
 

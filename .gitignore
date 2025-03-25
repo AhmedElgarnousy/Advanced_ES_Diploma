@@ -8,6 +8,11 @@
 *.elf
 
 
+# closed source
+# STM32_Bootloader_Tool.py
+
+*.py
+
 
 # My added file
 Drivers/
