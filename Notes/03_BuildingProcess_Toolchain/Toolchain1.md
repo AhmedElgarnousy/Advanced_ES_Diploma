@@ -8,7 +8,7 @@ Instead of generate executable file every time by terminal after any change
 
 ###### Makefile creation
 
-- RuleName is a word uses to say to make to execute a specific commands.(بخ)
+- RuleName is a word uses to say to `make tool` to execute a specific commands.(بخ)
 
 - Dependencies: the files or rules which it's commands depends on it
 
@@ -26,8 +26,8 @@ because may be compilation of some files takes much time, so i will speed up bui
 - to run makefile
 
 ```bash
-$make
-$mingw32-make
+$ make
+$ mingw32-make
 ```
 
 ```makefile

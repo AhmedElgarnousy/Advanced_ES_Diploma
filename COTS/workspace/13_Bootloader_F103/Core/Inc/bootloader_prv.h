@@ -10,4 +10,8 @@ static void voidSendNack(void);
 
 #define  BL_VERSION    		1U
 
+
+#define  DBGMCU_IDCODE_REG    *((volatile uint32_t*)0xE0042000)
+
+
 #endif /* INC_BOOTLOADER_PRV_H_ */

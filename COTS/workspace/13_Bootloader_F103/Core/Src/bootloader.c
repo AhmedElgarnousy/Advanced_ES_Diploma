@@ -1,5 +1,3 @@
-
-
 #include <stdint.h>
 #include "bootloader_prv.h"
 #include "bootloader.h"
@@ -9,9 +7,9 @@ extern CRC_HandleTypeDef hcrc;
 extern UART_HandleTypeDef huart1;
 
 
-/*************************************/
-/*********** Utilities****************/
-/*************************************/
+/*********************************************************/
+/******************** Utilities **************************/
+/*********************************************************/
 
 static uint8_t u8VerifyCRC(uint8_t *copy_pu8DataArr, uint8_t copy_u8size, uint32_t copy_u32HostCRC)
 {
@@ -138,7 +136,11 @@ void BL_voidHandleGetCIDCmd(uint8_t * copy_pu8CmdPacket)
 
 	if(Local_u8CRCStatus == CRC_SUCCESS)
 	{
-		voidSendAck(1U);
+		uint16_t Local_u16DeviceId = DBGMCU_IDCODE_REG & 0x0fff;
+
+		voidSendAck(2U);
+
+		HAL_UART_Transmit(&huart1, (uint8_t*)&Local_u16DeviceId, 2, HAL_MAX_DELAY);
 	}
 	else
 	{

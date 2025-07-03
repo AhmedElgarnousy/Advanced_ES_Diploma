@@ -4,7 +4,7 @@
 
 #### Overview
 
-Custom Bootloader Development Tutorials for STM32F103C8T6
+Custom Bootloader Development for STM32F103C8T6
 
 ```
 Document target apps code  using Doxygen,
@@ -23,3 +23,7 @@ As Futher development
 - STM HAL Library
 - Python3
 - Putty for logging
+
+#### features
+
+- support error detection through CRC

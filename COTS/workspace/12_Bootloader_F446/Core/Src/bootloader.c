@@ -150,7 +150,11 @@ void BL_voidHandleGetCIDCmd(uint8_t * copy_pu8CmdPacket)
 
 	if(Local_u8CRCStatus == CRC_SUCCESS)
 	{
-		voidSendAck(1U);
+		uint16_t Local_u16DeviceID = DBGMCU_IDCODE_REG & 0x0fff ; //  0b111111111111
+
+		voidSendAck(2U); /*Send size to follow*/
+
+		HAL_UART_Transmit(&huart2, (uint8_t*)&Local_u16DeviceID, 2, HAL_MAX_DELAY);
 	}
 	else
 	{
