@@ -6,7 +6,7 @@ Session: Intro 1
 
   - vehicles, watches, washers
 
-- More domains IOT, Embedded linux
+- More domains IOT, Embedded linux, Automtive Android (AAOS)
 
 - Importance of details and deep understanding
   - Different MCUs, Architectures, more projects
@@ -390,11 +390,11 @@ Arm purchased Falanx Microsystems A/S, a spin-off of a research project from the
 **The rise of smartphones**
 
 `2007)` : 5 billion mobile phone celebration
-`2008)` : 10 Billion Processors
+`2008)` : 10 Billion Processors, by the way Google developed Android OS at this time
 `2009)` : M0 Generation, Lowest Power Consumption and size, most energy efficient
 `2010)` : M4
 `2011)` : Microsoft Windows on ARM
 `2012)` : Real Windows on ARM
 `2020)` : 2020 NIVIDIA Acquire ARM by 40 billions $
 
-> Secret of success always intersted in ==power==, ==speed==, ==cost==
+> Secret of success always interested in ==power==, ==speed==, ==cost==

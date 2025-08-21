@@ -38,7 +38,7 @@ software Integration using Git
 ### Toolchain
 
 - Building Makefile, Startup file , Linker Script from scratch
-- Communication with debugger using server client communication.
+- Communication with debugger using client-server communication.
 
 ### Bootloader
 
