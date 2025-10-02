@@ -23,8 +23,8 @@ char *ptr = "Ahmed";
 
 **.elf** stands for *E*xecutable and *L*inkable *F*ormat.
 
-- main.o is in elf format
-- elf format is a standard describes a way of organising various elements(data section, ro-data, code, bss, etc )
+- main.o can exist in various formats depending on the operating system and architecture. Some of the most common object file formats include: Executable and Linking Format (ELF).
+- elf format is a standard that describes a way of organizing various elements(data section, ro-data, code, bss, etc)
 
 #### Other Relocatable Object File Formats
 

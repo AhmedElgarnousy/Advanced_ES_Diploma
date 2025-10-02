@@ -388,7 +388,7 @@ get answer of these questions from Linker script
 #### Let's write linker script
 
 - It's a text file which explains how different sections of the object files should be merged to create on o/p file
-- Linker & locator combination assigs unique absolute addresses to different sections of the output file by reffering to address information mentioned in linker script
+- Linker & locator combination assigns unique absolute addresses to different sections of the output file by reffering to address information mentioned in linker script
 - linker script also includes the code & data memory address & size information (in linker script you mention your memories & their addresses)
 - Linker script are written using GNU Linker command language
 - GNU Linker script has the file extension of `.Id`
