@@ -21,6 +21,9 @@
 #include "RCC_interface.h"
 #include "GPIO_interface.h"
 
+
+const char x  = 20; /*stored in rodata section, check map file */
+
 int main(void)
 {
 

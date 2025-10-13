@@ -198,6 +198,29 @@ really it's not real competior, but it's best sell because its eductional board
 
 ---
 
+### Automotive Projects
+
+Project for one of leading Tier 1 suppliers and major American OEM.
+DXC is responsible for product functional increments that includes new feature implementation as well as removal of known flaws and optimization of application design.
+
+The RFHM is an electronic module which controls passive access and start functionality and communicates with other ECUs via CAN networks.
+High level functions of the RFHM are:
+› Passive entry
+› [KeylessGo](https://en.wikipedia.org/wiki/Smart_key)
+› Remote Keyless Entry
+› TPMS(Tire Pressure Monitoring System)
+› Immobilizer
+› UDS diagnostic services
+› Low power management
+› Reflash over CAN
+
+<p >
+  <img width="30%" height="45%" src="../imgs/intro10.JPG">
+  <img width="30%" height="45%" src="../imgs/intro11.JPG">
+</p>
+
+---
+
 #### About the board
 
 ==BluePill==, ==Nucleo-f446RE==
