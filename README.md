@@ -30,6 +30,7 @@ Content Overview, What and Why ARM, Hardware Components, Motivation To Learn ARM
 - Inline Assembly
 - Stack (AAPCS)
 - Debugging Techniques
+- etc
 
 ### VCS and Software Integration
 

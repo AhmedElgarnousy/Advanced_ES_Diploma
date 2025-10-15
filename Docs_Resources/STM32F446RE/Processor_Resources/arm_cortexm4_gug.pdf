@@ -13381,3 +13381,120 @@ trailer
 startxref
 1800354
 %%EOF
+288 0 obj
+<</CropBox[ 0 0 595.275 792]/Annots[ 289 0 R 290 0 R 291 0 R 292 0 R 293 0 R 294 0 R 295 0 R 4644 0 R 4645 0 R 4654 0 R 4655 0 R]/Parent 3988 0 R/B[ 4277 0 R]/Contents 297 0 R/Rotate 0/MediaBox[ 0 0 595 792]/Thumb 2221 0 R/Resources 296 0 R/Type/Page>>
+endobj
+4644 0 obj
+<</Type/Annot/Subtype/Highlight/P 288 0 R/F 4/M(D:20251014151726+03'00')/NM(93048ae6-5abc-4339-a11b-e4148b5ce600)/Rect[ 266.460312 219.9135 557.39988 243.367308]/C[ 1 .941176 .4]/Popup 4645 0 R/CA 1/CreationDate(D:20251014151726+03'00')/QuadPoints[ 387.712356 243.367308 557.39988 243.367308 387.712356 231.913308 557.39988 231.913308 266.460312 231.3675 329.784 231.3675 266.460312 219.9135 329.784 219.9135]/AP<</N 4652 0 R>>>>
+endobj
+4645 0 obj
+<</Type/Annot/Subtype/Popup/Open false/F 28/Rect[ 612 123.367308 792 243.367308]/Parent 4644 0 R>>
+endobj
+4650 0 obj
+<</Length 216/Type/XObject/Subtype/Form/FormType 1/BBox[ 266.460312 219.9135 557.39988 243.367308]/Matrix[ 1 0 0 1 -266.460312 -219.9135]/Resources<</ProcSet[/PDF]>>>>
+stream
+1 .941176 .4 rg
+.715875 w
+387.712356 231.913308 m
+387.712356 243.367308 l
+557.39988 243.367308 l
+557.39988 231.913308 l
+f
+.715875 w
+266.460312 219.9135 m
+266.460312 231.3675 l
+329.784 231.3675 l
+329.784 219.9135 l
+f
+
+endstream
+endobj
+4651 0 obj
+<</Length 9/Type/XObject/Subtype/Form/FormType 1/BBox[ 0 0 290.939568 23.453808]/Matrix[ 1 0 0 1 0 0]/Resources<</ProcSet[/PDF]/XObject<</Form 4650 0 R>>>>/Group<</S/Transparency>>>>
+stream
+/Form Do
+
+endstream
+endobj
+4652 0 obj
+<</Length 20/Type/XObject/Subtype/Form/FormType 1/BBox[ 0 0 290.939568 23.453808]/Matrix[ 1 0 0 1 0 0]/Resources<</ProcSet[/PDF]/XObject<</MWFOForm 4651 0 R>>/ExtGState<</R0 4653 0 R>>>>>>
+stream
+/R0 gs
+/MWFOForm Do
+
+endstream
+endobj
+4653 0 obj
+<</Type/ExtGState/AIS false/BM/Multiply>>
+endobj
+4654 0 obj
+<</Type/Annot/Subtype/Highlight/P 288 0 R/F 4/M(D:20251014153259+03'00')/NM(cee7402f-b370-4765-b30d-e1b72fd1bd79)/Rect[ 266.460312 267.912732 560.257404 291.36654]/C[ .490196 .941176 .4]/Popup 4655 0 R/CA 1/CreationDate(D:20251014153259+03'00')/QuadPoints[ 450.378684 291.36654 560.257404 291.36654 450.378684 279.91254 560.257404 279.91254 266.460312 279.366732 406.612452 279.366732 266.460312 267.912732 406.612452 267.912732]/AP<</N 4662 0 R>>>>
+endobj
+4655 0 obj
+<</Type/Annot/Subtype/Popup/Open false/F 28/Rect[ 612 171.36654 792 291.36654]/Parent 4654 0 R>>
+endobj
+4660 0 obj
+<</Length 234/Type/XObject/Subtype/Form/FormType 1/BBox[ 266.460312 267.912732 560.257404 291.36654]/Matrix[ 1 0 0 1 -266.460312 -267.912732]/Resources<</ProcSet[/PDF]>>>>
+stream
+.490196 .941176 .4 rg
+.715875 w
+450.378684 279.91254 m
+450.378684 291.36654 l
+560.257404 291.36654 l
+560.257404 279.91254 l
+f
+.715875 w
+266.460312 267.912732 m
+266.460312 279.366732 l
+406.612452 279.366732 l
+406.612452 267.912732 l
+f
+
+endstream
+endobj
+4661 0 obj
+<</Length 9/Type/XObject/Subtype/Form/FormType 1/BBox[ 0 0 293.797092 23.453808]/Matrix[ 1 0 0 1 0 0]/Resources<</ProcSet[/PDF]/XObject<</Form 4660 0 R>>>>/Group<</S/Transparency>>>>
+stream
+/Form Do
+
+endstream
+endobj
+4662 0 obj
+<</Length 20/Type/XObject/Subtype/Form/FormType 1/BBox[ 0 0 293.797092 23.453808]/Matrix[ 1 0 0 1 0 0]/Resources<</ProcSet[/PDF]/XObject<</MWFOForm 4661 0 R>>/ExtGState<</R0 4663 0 R>>>>>>
+stream
+/R0 gs
+/MWFOForm Do
+
+endstream
+endobj
+4663 0 obj
+<</Type/ExtGState/AIS false/BM/Multiply>>
+endobj
+4026 0 obj
+<</CreationDate(D:20160126133755Z)/Subject(ARM Cortex-M4 Devices Generic User Guide (PDF). This documentation provides generic technical information for devices that use the Cortex-M4 processor. It describes the processor, its instruction set and memory model, and core peripherals and system interface.)/Copyright(Copyright ??2010-2011 ARM. All rights reserved.)/Author(ARM Limited)/Creator(FrameMaker 8.0)/Keywords(Processors, Microcontroller, Cortex-M, Cortex-M4, Software Developers, Embedded Software Developers, Architecture, Architecture, 32-bit, Microarchitecture, Debug and Trace, ETM,  ARM Processor Licensee)/Producer(Acrobat Distiller 11.0 (Windows))/ModDate(D:20251014153353+03'00')/Title(Cortex-M4 Devices Generic User Guide)>>
+endobj
+xref
+288 1
+0001801711 00000 n
+4026 1
+0001805063 00000 n
+4644 2
+0001801981 00000 n
+0001802429 00000 n
+4650 6
+0001802546 00000 n
+0001802967 00000 n
+0001803196 00000 n
+0001803442 00000 n
+0001803502 00000 n
+0001803970 00000 n
+4660 4
+0001804085 00000 n
+0001804528 00000 n
+0001804757 00000 n
+0001805003 00000 n
+trailer
+<</Size 4664/Prev 1800354/Root 4028 0 R/Info 4026 0 R/ID[<310E17CABE6F9F2BD37F82D174D3CF49><943FB2246EF0D7DBA2F829921F57D384>]>>
+startxref
+1805823
+%%EOF

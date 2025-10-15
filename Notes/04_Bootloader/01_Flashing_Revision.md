@@ -129,7 +129,7 @@ used in industry like Automotive
 <p align="center">
   <img width="70%" height="50%" src="../imgs/boot5.JPG">
 </p>
-Examples: UART B.L, CAN B.L, I2C B.L
+Examples: UART B.L, CAN B.L, I2C B.L, USB B.L, Wireless B.L
 
 ###### With Bootloader Techique, we can we use another protocol instead of MC Programming protocol to flash new application.
 

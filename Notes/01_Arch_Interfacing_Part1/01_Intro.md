@@ -421,3 +421,11 @@ Arm purchased Falanx Microsystems A/S, a spin-off of a research project from the
 `2020)` : 2020 NIVIDIA Acquire ARM by 40 billions $
 
 > Secret of success always interested in ==power==, ==speed==, ==cost==
+
+### Additional Resources
+
+[Learn Embedded Systems Firmware Basics – A Handbook for Developers](https://www.freecodecamp.org/news/learn-embedded-systems-firmware-basics-handbook-for-devs/)
+
+[Embedded Swift: A Modern Approach to Low-Level Programming](https://www.freecodecamp.org/news/embedded-swift-a-modern-approach-to-low-level-programming/)
+
+[podcast-hardware-engineering-bruno-haid](https://www.freecodecamp.org/news/podcast-hardware-engineering-bruno-haid/)

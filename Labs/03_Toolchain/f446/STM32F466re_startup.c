@@ -5,6 +5,13 @@
 #define SRAM_END   ((SRAM_START) + (SRAM_SIZE))
 #define STACK_START    SRAM_END
 
+extern uint32_t _sdata; // start of .data section in SRAM
+extern uint32_t _edata;
+extern uint32_t _etext;
+extern uint32_t _sbss;  // start of .bss section in SRAM
+extern uint32_t _ebss;
+
+void main(void);
 
 void Default_Handler(void);
 
@@ -234,12 +241,27 @@ void Default_Handler(void) {
 
 void Reset_Handler(void) {
     /* 1- copy .data section from flash to SRAM */
-    
+    uint32_t DataSecSize = (uint32_t)&_edata - (uint32_t)&_sdata;
+    uint8_t* srcPtr = (uint8_t*)&_etext; // start of data section in flash
+    uint8_t* dstPtr = (uint8_t*)&_sdata; // start of data section in SRAM
+    for(uint32_t i = 0; i < DataSecSize; i++)
+    {
+        *dstPtr = *srcPtr;
+        dstPtr++; // for readability and MISRA compliance
+        srcPtr++;
+    }
     /* 2- Initialize .bss section in SRAM to zero */
-
+    uint32_t BssSecSize = (uint32_t)&_ebss - (uint32_t)&_sbss;
+    dstPtr = (uint8_t*)&_sbss; // SRAM
+    for(uint32_t i = 0; i < BssSecSize; i++)
+    {
+       *dstPtr = (uint8_t)0;  /* *dstPtr++ = 0U */
+        dstPtr++;
+    }
     /* 3- call init function of standard library like printf();(stdio.h, stdlib.h ,stdint.h, math.h, string.h)*/
+    
     // __libc_init_array();
 
     /* 4- Call main */
+    main();
 }
-

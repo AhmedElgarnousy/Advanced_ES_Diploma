@@ -61,6 +61,11 @@ All: main.c math.c
 
 ##### To ensure that arm toolchain installed correctly and added to path environment variable
 
+**Note**: The arm-none-eabi prefix indicates it's specifically for:
+`arm` - ARM architecture processors
+`none` - no operating system (bare-metal)
+`eabi` - Embedded Application Binary Interface
+
 <p align="center">
   <img width="80%" height="50%" src="../imgs/toolchain1.JPG">
 </p>

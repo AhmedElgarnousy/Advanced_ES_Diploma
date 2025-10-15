@@ -24,7 +24,7 @@
 
 const char x  = 20; /*stored in rodata section, check map file */
 
-int main(void)
+void main(void)
 {
 
 	/* enable clock to GPIOA*/

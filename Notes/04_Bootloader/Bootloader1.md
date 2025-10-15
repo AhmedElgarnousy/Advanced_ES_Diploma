@@ -1,4 +1,4 @@
-### What is the Embeddded Bootloader (Automotive ECU Bootloader)
+### What is the Embedded Bootloader (Automotive ECU Bootloader)
 
 <img width="10%" height="10%" align="left" src="../imgs/bootloader-icon.png">
 
