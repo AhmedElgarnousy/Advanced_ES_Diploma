@@ -26,3 +26,8 @@ all: main.o GPIO_program.o RCC_program.o STM32F466re_startup.o final.elf
 
 clean:
 	rm -f *.o *.elf *.bin *.hex
+
+load:
+# 	openocd -f stm32f103c8_blue_pill.cfg -c "tcl port 6668"
+	openocd -f stm32f103c8_blue_pill.cfg -c "transport select swd" 
+# 	openocd -f st_nucleo_f4.cfg -c "tcl port 6667"
